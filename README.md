@@ -16,7 +16,7 @@ This repository contains the source code and assets for our entry in the Game Of
 1. Clone the repository
 
 ```bash
-git clone https://github.com/mahizes/Game-Off-2023.git
+git clone https://github.com/leofarhi/GameOff-2023.git
 ```
 
 2. Open the project in Unity
