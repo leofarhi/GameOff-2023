@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5acbfd62fa4bf9e48a9f53264061c856, type: 3}
+  m_Name: Language System Value
+  m_EditorClassIdentifier: 
+  languagesName:
+  - "Fran\xE7ais"
+  - English
+  currentLanguage: "Fran\xE7ais"
+  texts:
+  - uuid: 6b7169d6-21d9-4630-ba28-e3cd251162db
+    text:
+    - Jouer
+    - Jouer
+  - uuid: 5c167986-e95f-42cf-8ab0-988e19589c98
+    text:
+    - Options
+    - Options
+  - uuid: 28bedbab-76c4-4cad-94de-7805b5480414
+    text:
+    - Quitter
+    - Quitter
+  - uuid: 3ea555c3-aaed-4afb-86bd-c4ee7e6b8912
+    text:
+    - Appliquer
+    - Appliquer
+  - uuid: ba2c7bc4-bab9-45be-a790-a5dd41d35c74
+    text:
+    - Retour
+    - Retour
+  - uuid: fbdaf199-6480-41b6-836d-d7aafbcfca2c
+    text:
+    - Reculer
+    - Reculer
+  - uuid: 73e31ff6-b6f1-44f0-a833-4af535ccf1b8
+    text:
+    - Gauche
+    - Gauche
+  - uuid: 741e7c9b-7e6a-474c-bbab-e54cfaeb77ae
+    text:
+    - Changer
+    - Changer
+  - uuid: 3c42c86a-13df-4851-8fa2-2f06155ce893
+    text:
+    - "Param\xE8tres g\xE9n\xE9raux"
+    - "Param\xE8tres g\xE9n\xE9raux"
+  - uuid: 06659d01-dc55-4812-8ea2-5b2302597bdb
+    text:
+    - INITIAL_TEXT
+    - INITIAL_TEXT
+  - uuid: 50747ad8-fb2b-4ec8-8075-b96caa93d3c6
+    text:
+    - INITIAL_TEXT
+    - INITIAL_TEXT
+  - uuid: efa4b899-fa93-4f8f-a72f-7d35e13f2106
+    text:
+    - INITIAL_TEXT
+    - INITIAL_TEXT
+  - uuid: 526e9a93-f9a4-4bba-8d8f-0446b496452f
+    text:
+    - INITIAL_TEXT
+    - INITIAL_TEXT
+  - uuid: b96c033f-9b33-40d5-92e0-1e68b2e5a991
+    text:
+    - INITIAL_TEXT
+    - INITIAL_TEXT
+  - uuid: f27d8a0d-47c3-4f53-8de8-773d8a3fd8c1
+    text:
+    - INITIAL_TEXT
+    - INITIAL_TEXT
+  - uuid: 24801b49-80f2-46ab-9bc6-fc615b3d048f
+    text:
+    - INITIAL_TEXT
+    - INITIAL_TEXT

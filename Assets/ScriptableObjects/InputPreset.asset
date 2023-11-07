@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814582f17004aa14b9f075eab3d8e2da, type: 3}
+  m_Name: InputPreset
+  m_EditorClassIdentifier: 
+  pauseInput:
+    useInput: 1
+    isAxisInUse: 0
+    isUnityInput: 0
+    keyboard: Escape
+    keyboardAxis: 0
+    joystick: Start
+    joystickAxis: 0
+    mobile: Start
+    mobileAxis: 0
+    joystickAxisInvert: 0
+    keyboardAxisInvert: 0
+    mobileAxisInvert: 0
+    timeButtonWasPressed: 0
+    lastTimeTheButtonWasPressed: 0
+    inButtomTimer: 0
+  horizontalInput:
+    positiveButton:
+      useInput: 1
+      isAxisInUse: 0
+      isUnityInput: 0
+      keyboard: RightArrow
+      keyboardAxis: 0
+      joystick: LeftAnalogHorizontal
+      joystickAxis: 0
+      mobile: Horizontal
+      mobileAxis: 0
+      joystickAxisInvert: 0
+      keyboardAxisInvert: 0
+      mobileAxisInvert: 0
+      timeButtonWasPressed: 0
+      lastTimeTheButtonWasPressed: 0
+      inButtomTimer: 0
+    negativeButton:
+      useInput: 1
+      isAxisInUse: 0
+      isUnityInput: 0
+      keyboard: LeftArrow
+      keyboardAxis: 0
+      joystick: 
+      joystickAxis: 0
+      mobile: 
+      mobileAxis: 0
+      joystickAxisInvert: 0
+      keyboardAxisInvert: 0
+      mobileAxisInvert: 0
+      timeButtonWasPressed: 0
+      lastTimeTheButtonWasPressed: 0
+      inButtomTimer: 0
+  verticalInput:
+    positiveButton:
+      useInput: 1
+      isAxisInUse: 0
+      isUnityInput: 0
+      keyboard: UpArrow
+      keyboardAxis: 0
+      joystick: LeftAnalogVertical
+      joystickAxis: 0
+      mobile: Vertical
+      mobileAxis: 0
+      joystickAxisInvert: 0
+      keyboardAxisInvert: 0
+      mobileAxisInvert: 0
+      timeButtonWasPressed: 0
+      lastTimeTheButtonWasPressed: 0
+      inButtomTimer: 0
+    negativeButton:
+      useInput: 1
+      isAxisInUse: 0
+      isUnityInput: 0
+      keyboard: DownArrow
+      keyboardAxis: 0
+      joystick: 
+      joystickAxis: 0
+      mobile: 
+      mobileAxis: 0
+      joystickAxisInvert: 0
+      keyboardAxisInvert: 0
+      mobileAxisInvert: 0
+      timeButtonWasPressed: 0
+      lastTimeTheButtonWasPressed: 0
+      inButtomTimer: 0
+  sprintInput:
+    useInput: 1
+    isAxisInUse: 0
+    isUnityInput: 0
+    keyboard: LeftShift
+    keyboardAxis: 0
+    joystick: LeftStickClick
+    joystickAxis: 0
+    mobile: LeftStickClick
+    mobileAxis: 0
+    joystickAxisInvert: 0
+    keyboardAxisInvert: 0
+    mobileAxisInvert: 0
+    timeButtonWasPressed: 0
+    lastTimeTheButtonWasPressed: 0
+    inButtomTimer: 0
+  jumpInput:
+    useInput: 1
+    isAxisInUse: 0
+    isUnityInput: 0
+    keyboard: Space
+    keyboardAxis: 0
+    joystick: X
+    joystickAxis: 0
+    mobile: X
+    mobileAxis: 0
+    joystickAxisInvert: 0
+    keyboardAxisInvert: 0
+    mobileAxisInvert: 0
+    timeButtonWasPressed: 0
+    lastTimeTheButtonWasPressed: 0
+    inButtomTimer: 0
