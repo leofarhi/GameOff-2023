@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54669f36576d0474a814610ba6227a70, type: 3}
+  m_Name: MainPlayer
+  m_EditorClassIdentifier: 
+  animations:
+  - name: Idle
+    frames:
+    - right: {fileID: -1085202374, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: 2021177953, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: -1392751264, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: -1935133455, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    - right: {fileID: 1058921381, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: 59843256, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: 109606840, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: -1625706696, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    - right: {fileID: 120353890, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: -2097109550, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: -1664268716, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: 1886032590, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    frameTime: 0
+  - name: Walk
+    frames:
+    - right: {fileID: -926511111, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: 31473338, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: 1172737725, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: -1873201470, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    - right: {fileID: 1973657060, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: -510198700, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: 129269564, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: 844525472, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    - right: {fileID: 923924573, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: -796533107, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: 69223266, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: -655491981, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    - right: {fileID: -698215266, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: 1253246561, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: 1693894450, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: -1963931642, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    - right: {fileID: -1265039131, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: -1479445118, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: -1224640411, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: -2037247929, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    - right: {fileID: -1384778423, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: -155230727, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: 153361304, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: 1744243526, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    - right: {fileID: 721165812, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: -1496595340, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: 540284912, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: 920204323, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    - right: {fileID: -1626731332, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: -864733879, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: -1531646506, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: -1029649666, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    - right: {fileID: 189141194, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      left: {fileID: 1278958441, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      up: {fileID: 1650786660, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      down: {fileID: -1783461021, guid: b2910511f20219242bd33c11c01ed16b, type: 3}
+      textures: []
+    - right: {fileID: 536985543, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: -1876083813, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: -193487898, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: -817999795, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    frameTime: 0
+  - name: Run
+    frames:
+    - right: {fileID: 1519471327, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: -671909546, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: 558082394, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: 1186152094, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    - right: {fileID: 917962477, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: -193589035, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: 478301423, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: 2111585312, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    - right: {fileID: -1643407896, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: -679982428, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: -35272074, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: 1603422183, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    - right: {fileID: -2021252502, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: 1376875525, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: 612343959, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: 1643020616, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    - right: {fileID: -238683815, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: 1038734205, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: 677816672, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: 1546120594, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    - right: {fileID: 2054680218, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: -1086990909, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: 340590568, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: -37055075, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    frameTime: 0
+  - name: Jump
+    frames:
+    - right: {fileID: 1512341389, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: -1763906992, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: 734044571, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: -2103202904, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    - right: {fileID: -1507842660, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: 1763358530, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: -1941368920, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: -1932776201, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    - right: {fileID: -1022281715, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: -95865955, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: 1557047137, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: -1617735122, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    - right: {fileID: 2002545210, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: -259261075, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: 929585206, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: 1705905470, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    frameTime: 0
+  - name: Landing
+    frames:
+    - right: {fileID: 383416243, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      left: {fileID: 1565863942, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      up: {fileID: 404800295, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      down: {fileID: 763792758, guid: 8e5791bfd0b637f418cb873ee0b293ab, type: 3}
+      textures: []
+    frameTime: 0

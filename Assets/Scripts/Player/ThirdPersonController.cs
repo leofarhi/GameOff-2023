@@ -84,6 +84,8 @@
         public Animator _animator;
         private CharacterController _controller;
         private GameObject _mainCamera;
+        [HideInInspector]
+        public ThirdPersonCamera CameraMain;
 
         private const float _threshold = 0.01f;
 
@@ -110,10 +112,10 @@
             if (Camera.main != null)
             {
                 _mainCamera = Camera.main.gameObject;
-                ThirdPersonCamera cameraMain = _mainCamera.GetComponent<ThirdPersonCamera>();
-                if (cameraMain != null)
+                CameraMain = _mainCamera.GetComponent<ThirdPersonCamera>();
+                if (CameraMain != null)
                 {
-                    cameraMain.player = this;
+                    CameraMain.player = this;
                 }
             }
         }
