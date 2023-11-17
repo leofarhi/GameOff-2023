@@ -3,7 +3,237 @@ guid: 8411b4b379af1bb4f860fa980eebe9a2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 3DModel_LowPoly
+    second: {fileID: 2100000, guid: 84d42bffe7542b94b9011c985cbd57c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Alu. Powder Coat
+    second: {fileID: 2100000, guid: 97747d8859aad4c46ba8a31192fe82bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlockM
+    second: {fileID: 2100000, guid: 58e4cdf327699f646a370b153dd4b45a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crate_mat
+    second: {fileID: 2100000, guid: 68f455a90a5b8cb4abcf49eb4135770d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Steel.002
+    second: {fileID: 2100000, guid: c2a0ab894d3532a4c8bab2f291652777, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gasket
+    second: {fileID: 2100000, guid: cb7256c0f6051fd47b389676e8ad1398, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hatch
+    second: {fileID: 2100000, guid: 948992296f4ebd64bac3e73ac1421fe1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 2b423f29d5f12654c8f1128d41fe99ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 74fac2e9efb53bd4e85e05f06c3fbc28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 75b0e9769107d9c4399695bb8a6fb61a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: c613528d1992adf42b48effb5485aa13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 3779bbfd8fa7175489ec0cf9dfd71e09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 652f2cc74d2a26d4ab1c9d84016844d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: f6d509eca1581f647a42392f70e5119d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 300176d451ec1f244b6bc179e21ed20c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.009
+    second: {fileID: 2100000, guid: fb4445cfaee34a848a1754271486b9a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: d9fb4f7202a0b814ab882c0c80c161aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalM
+    second: {fileID: 2100000, guid: 49738894118fd114186a5c87abfafe8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NA Aluminium
+    second: {fileID: 2100000, guid: 015a91f96ef7bda45a9cd9bed3fd3315, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Old White Metal.008
+    second: {fileID: 2100000, guid: 35e36daeaf2fbee44acff207b24e3a49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Riging
+    second: {fileID: 2100000, guid: 18a4dc9ef6e042549839529a5799c23f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Riging.002
+    second: {fileID: 2100000, guid: e85d239e37e6e0a4aaba1afcc737a94b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Riging.013
+    second: {fileID: 2100000, guid: ec2108b3afee50e428c9b45be65142e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Riging.016
+    second: {fileID: 2100000, guid: 4c5530f6fa8fef74b9fe31c2a27955d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Riging.017
+    second: {fileID: 2100000, guid: 6d342d51002edce4c9d468a02a023841, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Robot_M
+    second: {fileID: 2100000, guid: be9c782139f297c409d972d867aa7b41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rubber
+    second: {fileID: 2100000, guid: 23bc0c6897aadaf4091864a9f5264ce8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stainless Steel.003
+    second: {fileID: 2100000, guid: 8650f01fdc0d5ac4fb7e71716c73f530, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Termal panel.001
+    second: {fileID: 2100000, guid: 1e00173aa67804b4299a641636103741, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Glass
+    second: {fileID: 2100000, guid: e0b04291e40a9b94aa16cac3e4c6df59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Glass.001
+    second: {fileID: 2100000, guid: 5b4d56036d137be43a5c8c3a98b7eee7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Handle (Black)
+    second: {fileID: 2100000, guid: e7634ef8981420e43b91a8650e4de4a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barrier1
+    second: {fileID: 2100000, guid: f3e1ae1d24747c8479116684c7b2bae8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barrier2
+    second: {fileID: 2100000, guid: 0b66d9396ce62cd4b86e8b8758ef7f4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: can_rusted
+    second: {fileID: 2100000, guid: 32fa513dca20b5149ab57ebf8ab6f21a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crowbar_01
+    second: {fileID: 2100000, guid: e637aabcb3d85e94f93fb04ebe7c77d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ladder_sectioned_01
+    second: {fileID: 2100000, guid: ea22fd5b44703864fa91a323d671cb0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: modular_metal_gutter
+    second: {fileID: 2100000, guid: 96983b6dd30d3be4b961be60b3fa5b30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: picke_dirty_01
+    second: {fileID: 2100000, guid: cc8eb74b3781f3645b21e2c6aa0bac2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pipe_wrench
+    second: {fileID: 2100000, guid: 7bc27ebf7adf9164697f19b4e1fac341, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: proc_fence_bottom
+    second: {fileID: 2100000, guid: 2399d96a2f0a70b49bf11afcd76f141b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: proc_fence_up
+    second: {fileID: 2100000, guid: 1c058207f02fa01448472f7a46cd831a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rusted_wheel_rim_01
+    second: {fileID: 2100000, guid: b2e4f3bec24ed67489eb8534f31615df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rusted_wheel_rim_02
+    second: {fileID: 2100000, guid: 3b97e3609104d184eac2f5ffb5c17490, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u6750\u8D28.004"
+    second: {fileID: 2100000, guid: fcdce55fb7e64ed44b82646a1ba93042, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u6750\u8D28.007"
+    second: {fileID: 2100000, guid: 10142f832a309d94684cb96c87d5c8dd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
