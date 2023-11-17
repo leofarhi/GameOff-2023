@@ -9,7 +9,10 @@ public class ThirdPersonCamera : MonoBehaviour
     public ThirdPersonController player;
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
-    
+    public Vector3 shift;
+    public bool smoothRotation = false;
+    public float size = 2f;
+
     [HideInInspector]
     public List<CameraArea> _cameraAreas = new List<CameraArea>();
 
@@ -29,11 +32,14 @@ public class ThirdPersonCamera : MonoBehaviour
         if (area != null)
         {
             offset = area.offset;
+            shift = area.shift;
+            smoothRotation = area.smoothRotation;
+            size = area.size;
         }
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
         if (player == null)
         {
@@ -41,9 +47,18 @@ public class ThirdPersonCamera : MonoBehaviour
         }
         UpdateCameraArea();
         Vector3 desiredPosition = player.transform.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position- shift, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
-        Quaternion desiredRotation = Quaternion.LookRotation(player.transform.position - transform.position);
-        transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothSpeed);
+        if (smoothRotation)
+        {
+            Quaternion desiredRotation = Quaternion.LookRotation(player.transform.position - (transform.position- shift));
+            transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothSpeed);
+        }
+        else
+        {
+            transform.LookAt(player.transform);
+        }
+        transform.position += shift;
+        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, size, smoothSpeed);
     }
 }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class PlayerHUD : MonoBehaviour
 {
@@ -11,7 +13,11 @@ public class PlayerHUD : MonoBehaviour
             return ThirdPersonController.instance;
         }
     }
-    public TMPro.TextMeshProUGUI temperatureText;
+    public Image temperatureBar;
+    
+    //Volume
+    public Volume cold;
+    public Volume hot;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +28,8 @@ public class PlayerHUD : MonoBehaviour
     void Update()
     {
         if (player == null)return;
-        temperatureText.text = player.currentTemperature.ToString("0.0") + "°C";
+        temperatureBar.fillAmount = (player.minTemperature - player.currentTemperature) / (player.minTemperature - player.maxTemperature);
+        cold.weight = Mathf.Clamp01(1 - (player.minTemperature - player.currentTemperature) / (player.minTemperature - player.temperatureRange.cold));
+        hot.weight = Mathf.Clamp01((player.temperatureRange.hot - player.currentTemperature) / (player.temperatureRange.hot - player.maxTemperature));
     }
 }

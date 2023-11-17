@@ -25,6 +25,10 @@ public class TemperatureBehaviour : MonoBehaviour
     public float temperatureRate = 0.1f;
     public TemperatureRange temperatureRange;
     
+    [Header("Min&Max Temperature")]
+    public float minTemperature = -20;
+    public float maxTemperature = 70;
+    
     private TemperatureState _currentTemperatureState = TemperatureState.Normal;
     public TemperatureState currentTemperatureState
     {

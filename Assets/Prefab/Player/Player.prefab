@@ -803,7 +803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4652622456582343063
 Transform:
   m_ObjectHideFlags: 0
@@ -2538,11 +2538,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8909305122676983841}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.15, y: 0, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8266630429020992393}
   - {fileID: 4652622456582343063}
   - {fileID: 8009847039702587276}
   m_Father: {fileID: 0}
@@ -2587,11 +2588,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTemperature: 20
   stableTemperature: 25
-  temperatureRate: 0.1
+  temperatureRate: 0.5
   temperatureRange:
     cold: 0
     hot: 40
     smoothness: 5
+  minTemperature: -20
+  maxTemperature: 70
   temperatureAreas: []
   playerBody: {fileID: 2361391472474731456}
   inputPreset: {fileID: 11400000, guid: 531779ab7bd77a14a91c89cdc50cde12, type: 2}
@@ -2599,19 +2602,6 @@ MonoBehaviour:
   SprintSpeed: 5.335
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
-  LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
-  FootstepAudioClips:
-  - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
-  - {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
-  - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
-  - {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
-  - {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
-  - {fileID: 8300000, guid: 29841e7d5bbfb5b419c9ad16ca8bc4c1, type: 3}
-  - {fileID: 8300000, guid: dd1af302b8902684d9381de1f2d3a5af, type: 3}
-  - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
-  - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
-  - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
-  FootstepAudioVolume: 0.3
   JumpHeight: 1.2
   Gravity: -15
   JumpTimeout: 0.3
@@ -2622,7 +2612,7 @@ MonoBehaviour:
   GroundLayers:
     serializedVersion: 2
     m_Bits: 129
-  _animator: {fileID: 3791919104118116149}
+  _animator: {fileID: 2619076585365891571}
   CameraMain: {fileID: 0}
 --- !u!114 &2581390790328099317
 MonoBehaviour:
@@ -2705,3 +2695,124 @@ Transform:
   - {fileID: 6425100758521679793}
   m_Father: {fileID: 5173872681569010103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8444884745447691362
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8360437240958138854}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_Name
+      value: MetalHotColdDude
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 40db3173a05ae3242b1c182a09b0a183, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1480d7599c552a44911f29009af3d9f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4510764764957306656}
+  m_SourcePrefab: {fileID: 100100000, guid: c1480d7599c552a44911f29009af3d9f, type: 3}
+--- !u!95 &2619076585365891571 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: c1480d7599c552a44911f29009af3d9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8444884745447691362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8266630429020992393 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8444884745447691362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8787411549943458099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c1480d7599c552a44911f29009af3d9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8444884745447691362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4510764764957306656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8787411549943458099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff0222d98d3f5e4a8ce0a8812003e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 5805693133992023766}
+  LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
+  FootstepAudioClips:
+  - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
+  - {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
+  - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
+  - {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
+  - {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
+  - {fileID: 8300000, guid: 29841e7d5bbfb5b419c9ad16ca8bc4c1, type: 3}
+  - {fileID: 8300000, guid: dd1af302b8902684d9381de1f2d3a5af, type: 3}
+  - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
+  - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
+  - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
+  FootstepAudioVolume: 0.5

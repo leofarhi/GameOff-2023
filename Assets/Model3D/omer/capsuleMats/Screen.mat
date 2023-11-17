@@ -162,7 +162,7 @@ Material:
     - _AmbientLight: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _BaseColor: {r: 0.094612636, g: 0.20817101, b: 0.2649434, a: 1}
     - _Color: {r: 0.09461262, g: 0.20817098, b: 0.26494336, a: 1}
-    - _EdgeHighlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _EdgeHighlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5764706}
     - _EmissionColor: {r: 0.24564704, g: 0.5468864, b: 0.696, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0.5}
     - _PixelGridOrigin: {r: 0, g: 0, b: 0, a: 0}

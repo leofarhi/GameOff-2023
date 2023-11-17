@@ -30,7 +30,8 @@ Shader "ProPixelizer/SRP/PixelizedWithOutline"
 		_NormalMap_ST("Normal Map_ST", Vector) = (1, 1, 0, 0)
 		[NoScaleOffset]_Emission("Emission", 2D) = "white" {}
 		_Emission_ST("Emission_ST", Vector) = (1, 1, 0, 0)
-		_EmissionColor("EmissionColor", Color) = (1, 1, 1, 0)
+    	//HDRP color properties
+		[HDR]_EmissionColor("EmissionColor", Color) = (1, 1, 1, 0)
 		_AlphaClipThreshold("Alpha Clip Threshold", Range(0, 1)) = 0.5
 		[IntRange] _ID("ID", Range(0, 255)) = 1 // A unique ID used to differentiate objects for purposes of outlines.
 		_OutlineColor("OutlineColor", Color) = (0.0, 0.0, 0.0, 0.5)

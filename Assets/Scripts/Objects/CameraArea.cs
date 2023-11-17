@@ -6,7 +6,10 @@ using UnityEngine;
 public class CameraArea : MonoBehaviour
 {
     public Vector3 offset;
+    public Vector3 shift;
+    public bool smoothRotation = true;
     public int priority = 0;
+    public float size = 2f;
     void OnDrawGizmos()
     {
         Color color = Color.green;
