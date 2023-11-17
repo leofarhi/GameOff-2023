@@ -17,9 +17,9 @@ public class CameraArea : MonoBehaviour
         Gizmos.color = color;
         //dessine un cube à la position du trigger
         BoxCollider boxCollider = GetComponent<BoxCollider>();
-        gameObject.GetComponent<BoxCollider>().isTrigger = true;
-        gameObject.GetComponent<BoxCollider>().center = Vector3.zero;
-        gameObject.GetComponent<BoxCollider>().size = Vector3.one;
+        boxCollider.isTrigger = true;
+        boxCollider.center = Vector3.zero;
+        boxCollider.size = Vector3.one;
         Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.DrawCube(Vector3.zero, Vector3.one);
     }

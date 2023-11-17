@@ -7,9 +7,14 @@
     [RequireComponent(typeof(CharacterController))]
     public class ThirdPersonController : TemperatureBehaviour
     {
-        public GameObject playerBody;
-        private Vector3 originalBodyScale;
-        private Vector3 originalBodyPosition;
+        [Header("Temperature Player")]
+        public GameObject playerBodyNormal;
+        public GameObject playerBodyCold;
+        public GameObject playerRainParticles;
+        public GameObject ParticleColdTransitionPrefab;
+        public GameObject ParticleHotTransitionPrefab;
+        public GameObject ParticleNormalTransitionPrefab;
+        public Vector3 offsetParticleTransition;
         private Vector3 originalCharacterControllerCenter;
         private float originalCharacterControllerHeight;
         
@@ -97,8 +102,6 @@
         
         public void SetupOriginalBodyScale()
         {
-            originalBodyScale = playerBody.transform.localScale;
-            originalBodyPosition = playerBody.transform.localPosition;
             originalCharacterControllerCenter = _controller.center;
             originalCharacterControllerHeight = _controller.height;
         }
@@ -144,29 +147,57 @@
             int playerLayer = LayerMask.NameToLayer("Player");
             int manholeCoverLayer = LayerMask.NameToLayer("ManholeCover");
             Physics.IgnoreLayerCollision(playerLayer, manholeCoverLayer, false);
+            if ((state==TemperatureState.Cold || state==TemperatureState.Hot)&&old!=TemperatureState.Normal)
+            {
+                OnTemperatureStateChangeCallback(old,TemperatureState.Normal);
+                old = TemperatureState.Normal;
+            }
             switch (state)
             {
                 case TemperatureState.Cold:
                     //dividing scale by 2
-                    playerBody.transform.localScale = originalBodyScale / 2;
-                    //moving body down
-                    //playerBody.transform.localPosition = originalBodyPosition - new Vector3(0, 0.5f, 0);
                     //changing character controller height
                     _controller.height = originalCharacterControllerHeight / 2;
                     _controller.center = originalCharacterControllerCenter - new Vector3(0, 0.5f, 0);
+                    //changing player body
+                    playerBodyNormal.SetActive(false);
+                    playerBodyCold.SetActive(true);
+                    //change animator
+                    _animator = playerBodyCold.GetComponent<Animator>();
+                    //Spawn cold transition particles
+                    Instantiate(ParticleColdTransitionPrefab, transform.position+offsetParticleTransition, Quaternion.identity);
                     break;
                 case TemperatureState.Normal:
                     //resetting scale
-                    playerBody.transform.localScale = originalBodyScale;
-                    //resetting position
-                    playerBody.transform.localPosition = originalBodyPosition;
                     //resetting character controller height
                     _controller.height = originalCharacterControllerHeight;
                     _controller.center = originalCharacterControllerCenter;
+                    //resetting player body
+                    playerBodyNormal.SetActive(true);
+                    playerBodyCold.SetActive(false);
+                    playerRainParticles.SetActive(false);
+                    //resetting animator
+                    _animator = playerBodyNormal.GetComponent<Animator>();
+                    //Spawn normal transition particles
+                    Instantiate(ParticleNormalTransitionPrefab, transform.position+offsetParticleTransition, Quaternion.identity);
+                    /*if (old == TemperatureState.Cold)
+                    {
+                        //Spawn cold transition particles
+                        Instantiate(ParticleColdTransitionPrefab, transform.position+offsetParticleTransition, Quaternion.identity);
+                    }
+                    else if (old == TemperatureState.Hot)
+                    {
+                        //Spawn hot transition particles
+                        Instantiate(ParticleHotTransitionPrefab, transform.position+offsetParticleTransition, Quaternion.identity);
+                    }*/
                     break;
                 case TemperatureState.Hot:
                     //ingnore layer collision between player and manholeCover
                     Physics.IgnoreLayerCollision(playerLayer, manholeCoverLayer);
+                    //rain particles
+                    playerRainParticles.SetActive(true);
+                    //Spawn hot transition particles
+                    Instantiate(ParticleHotTransitionPrefab, transform.position+offsetParticleTransition, Quaternion.identity);
                     break;
             }
         }
