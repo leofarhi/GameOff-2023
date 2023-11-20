@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
     {
         persistenceDataScene.dataSaveValue.Reset();
         persistenceDataScene.HideLoadingScreen();
-        persistenceDataScene.InterfaceIsOpen = InterfaceType.Pause;
+        persistenceDataScene.InterfaceIsOpen = GameState.Paused;
         loadGameBox.SetActive(false);
     }
 

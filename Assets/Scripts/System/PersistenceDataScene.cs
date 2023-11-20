@@ -2,16 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-
-public enum InterfaceType
-{
-    None,
-    Pause,
-    Animation,
-    Dialogue,
-    Loading,
-}
 
 
 public class PersistenceDataScene : MonoBehaviour
@@ -19,15 +11,21 @@ public class PersistenceDataScene : MonoBehaviour
     public static PersistenceDataScene Instance;
     public List<GameObject> objectsToPersist = new List<GameObject>();
     public GameObject eventSystem;
-    
+    [Space]
     public LanguageSystemValue languageSystemValue;
     public SettingsValue settingsValue;
     public InputPreset inputPreset;
     public DataSaveValue dataSaveValue;
-    
+    [Space]
+    public BoolValue playerCanTeleport;
+    public ListValue capsuleMetRuntime;
+    [Space]
     public GameObject loadingScreenPanel;
+    public GameObject savePanel;
+    public GameObject teleportBox;
+    [Space]
+    public DialogueInterface dialogueInterface;
     
-    private InterfaceType _interfaceIsOpen;
     
     public ThirdPersonController player
     {
@@ -37,15 +35,12 @@ public class PersistenceDataScene : MonoBehaviour
         }
     }
 
-    public InterfaceType InterfaceIsOpen
+    public GameState InterfaceIsOpen
     {
-        get { return _interfaceIsOpen; }
+        get { return GameStateManager.Instance.CurrentGameState; }
         set
         {
-            _interfaceIsOpen = value;
-            GameStateManager.Instance.SetState(_interfaceIsOpen == InterfaceType.None
-                ? GameState.Gameplay
-                : GameState.Paused);
+            GameStateManager.Instance.SetState(value);
         }
     }
 
@@ -68,7 +63,8 @@ public class PersistenceDataScene : MonoBehaviour
             return;
         }
         loadingScreenPanel.SetActive(false);
-        InterfaceIsOpen = InterfaceType.None;
+        savePanel.SetActive(false);
+        InterfaceIsOpen = GameState.Gameplay;
         InputPreset.current = inputPreset;
         LanguageSystemValue.Instance = languageSystemValue;
     }
@@ -80,7 +76,7 @@ public class PersistenceDataScene : MonoBehaviour
     
     private IEnumerator LoadSceneAsync(AsyncOperation operation,bool autoHideLoadingScreen=true)
     {
-        InterfaceIsOpen = InterfaceType.Loading;
+        InterfaceIsOpen = GameState.Loading;
         loadingScreenPanel.SetActive(true);
         while (operation!=null && !operation.isDone && loadingScreenPanel.activeSelf)
         {
@@ -92,7 +88,7 @@ public class PersistenceDataScene : MonoBehaviour
             yield return null;
         }
         loadingScreenPanel.SetActive(false);
-        InterfaceIsOpen = InterfaceType.None;
+        InterfaceIsOpen = GameState.Gameplay;
     }
     
     public void LoadScene(string sceneName,bool autoHideLoadingScreen=true)
@@ -103,5 +99,50 @@ public class PersistenceDataScene : MonoBehaviour
     public void HideLoadingScreen()
     {
         loadingScreenPanel.SetActive(false);
+    }
+    
+    private IEnumerator LaunchDialogueEvent(DialogueValue dialogueValue,UnityEvent end=null)
+    {
+        GameState previousGameState = InterfaceIsOpen;
+        InterfaceIsOpen = GameState.Dialogue;
+        yield return StartCoroutine(DialogueValue.LaunchDialogue(dialogueValue));
+        InterfaceIsOpen = previousGameState;
+        end?.Invoke();
+    }
+    
+    public void LaunchDialogue(DialogueValue dialogueValue,UnityEvent end=null)
+    {
+        StartCoroutine(LaunchDialogueEvent(dialogueValue,end));
+    }
+    
+    public void SaveGame()
+    {
+        dataSaveValue.Save(dataSaveValue.RuntimeValue.saveName);
+    }
+    
+    public void SaveAndQuit()
+    {
+        SaveGame();
+        ReturnToMainMenu();
+    }
+    
+    public void ReturnToMainMenu()
+    {
+        dataSaveValue.Reset();
+        LoadScene("MainMenu");
+    }
+    
+    public void OpenOrCloseSavePanel(bool open)
+    {
+        savePanel.SetActive(open);
+        if (open)
+        {
+            InterfaceIsOpen = GameState.Paused;
+            teleportBox.SetActive(playerCanTeleport.RuntimeValue);
+        }
+        else
+        {
+            InterfaceIsOpen = GameState.Gameplay;
+        }
     }
 }

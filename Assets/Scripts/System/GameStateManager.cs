@@ -5,7 +5,11 @@ using UnityEngine;
 public enum GameState
 {
     Gameplay,
-    Paused
+    Wait,
+    Paused,
+    Animation,
+    Dialogue,
+    Loading,
 }
 
 public class GameStateManager

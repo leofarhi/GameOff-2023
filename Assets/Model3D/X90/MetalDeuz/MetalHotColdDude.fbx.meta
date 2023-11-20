@@ -14,6 +14,26 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: DefaultMaterial
     second: {fileID: 2100000, guid: 376be4d136335cf43b211a7915ffa0e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HairMaterial
+    second: {fileID: 2100000, guid: de94c4a48252da446bef1cf8d6315e80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HeadMaterial
+    second: {fileID: 2100000, guid: dde6b2a94e7aea744bc83178058b9786, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LeftArmMaterial
+    second: {fileID: 2100000, guid: b0241297767ba0b46a927f66e36b73c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RightArmMaterial
+    second: {fileID: 2100000, guid: e9e4849023aea2543919f4266befafbc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,4 +1,5 @@
-﻿ using UnityEngine;
+﻿ using System;
+ using UnityEngine;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
@@ -84,15 +85,42 @@
         
         public Animator _animator;
         private CharacterController _controller;
-        private GameObject _mainCamera;
+
+        private GameObject _mainCamera
+        {
+            get
+            {
+                return CameraMain.gameObject;
+            }
+        }
         [HideInInspector]
         public ThirdPersonCamera CameraMain;
 
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
+        
+        //lock input
+        private uint _lockInputCount = 0;
+        public bool lockInput
+        {
+            get
+            {
+                return _lockInputCount > 0;
+            }
+        }
+        public void LockInput()
+        {
+            _lockInputCount++;
+        }
+        public void UnlockInput()
+        {
+            _lockInputCount--;
+            if (_lockInputCount < 0)
+                _lockInputCount = 0;
+        }
 
-
+        //Functions
         private void Awake()
         {
             instance = this;
@@ -110,7 +138,7 @@
         {
             if (Camera.main != null)
             {
-                _mainCamera = Camera.main.gameObject;
+                GameObject _mainCamera = Camera.main.gameObject;
                 CameraMain = _mainCamera.GetComponent<ThirdPersonCamera>();
                 if (CameraMain != null)
                 {
@@ -231,6 +259,11 @@
             Vector2 moveInput = inputPreset.moveInput;
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = inputPreset.sprintInput.GetButton() ? SprintSpeed : MoveSpeed;
+            
+            if (lockInput)
+            {
+                moveInput = Vector2.zero;
+            }
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -271,8 +304,7 @@
             // if there is a move input rotate player when the player is moving
             if (moveInput != Vector2.zero)
             {
-                _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
-                                  _mainCamera.transform.eulerAngles.y;
+                _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + CameraMain.GetCameraRotationY();
                 float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
                     RotationSmoothTime);
 
@@ -314,8 +346,9 @@
                 {
                     _verticalVelocity = -2f;
                 }
-
-                // Jump
+                
+                if (!lockInput) 
+                    // Jump
                 if (inputPreset.jumpInput.GetButtonDown() && _jumpTimeoutDelta <= 0.0f)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
@@ -383,5 +416,27 @@
             Gizmos.DrawSphere(
                 new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z),
                 GroundedRadius);
+        }
+
+        public void OnGameStateChanged(GameState newGameState)
+        {
+            if (newGameState == GameState.Gameplay)
+            {
+                UnlockInput();
+            }
+            else
+            {
+                LockInput();
+            }
+        }
+
+        private void OnEnable()
+        {
+            GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
+        }
+        
+        private void OnDisable()
+        {
+            GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
         }
     }

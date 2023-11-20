@@ -10,6 +10,8 @@ public class CameraArea : MonoBehaviour
     public bool smoothRotation = true;
     public int priority = 0;
     public float size = 2f;
+    public float shiftCameraRotationY = 0f;
+    public bool useOnlyShiftRotation = false;
     void OnDrawGizmos()
     {
         Color color = Color.green;

@@ -12,6 +12,8 @@ public class ThirdPersonCamera : MonoBehaviour
     public Vector3 shift;
     public bool smoothRotation = false;
     public float size = 2f;
+    public float shiftCameraRotationY = 0f;
+    public bool useOnlyShiftRotation = false;
 
     [HideInInspector]
     public List<CameraArea> _cameraAreas = new List<CameraArea>();
@@ -35,6 +37,20 @@ public class ThirdPersonCamera : MonoBehaviour
             shift = area.shift;
             smoothRotation = area.smoothRotation;
             size = area.size;
+            shiftCameraRotationY = area.shiftCameraRotationY;
+            useOnlyShiftRotation = area.useOnlyShiftRotation;
+        }
+    }
+    
+    public float GetCameraRotationY()
+    {
+        if (useOnlyShiftRotation)
+        {
+            return shiftCameraRotationY;
+        }
+        else
+        {
+            return transform.eulerAngles.y + shiftCameraRotationY;
         }
     }
 
