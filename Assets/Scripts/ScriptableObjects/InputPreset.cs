@@ -24,6 +24,7 @@ public class InputPreset : ScriptableObject
     public GenericInput jumpInput = new GenericInput("Space", "X", "X");
     public GenericInput actionInput = new GenericInput("E", "B", "B");
     public GenericInput cancelInput = new GenericInput("Q", "A", "A");
+    public GenericInput attackInput = new GenericInput("Mouse0", "RightTrigger", "RightTrigger");
     
     public GenericInput GetInput(string name)
         {

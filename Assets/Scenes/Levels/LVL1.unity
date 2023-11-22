@@ -851,6 +851,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1464a6ddbe8f4d6fae0a4ec0e58c5ed, type: 3}
+--- !u!4 &150342085 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5575932246950542015, guid: ff669bd243159924c8642f4cff27e295,
+    type: 3}
+  m_PrefabInstance: {fileID: 6476917697365154741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -4273,6 +4279,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 433fedf31da9e9549897fa3a4aec8f0a, type: 3}
+--- !u!114 &778523526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8875470458085247313, guid: ff669bd243159924c8642f4cff27e295,
+    type: 3}
+  m_PrefabInstance: {fileID: 6476917697365154741}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &900769094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4656,6 +4674,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &966115056 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3074749779242917089, guid: ff669bd243159924c8642f4cff27e295,
+    type: 3}
+  m_PrefabInstance: {fileID: 6476917697365154741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &973588280
 GameObject:
   m_ObjectHideFlags: 0
@@ -27432,6 +27456,76 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4510764764957306656, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4510764764957306656, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4510764764957306656, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 778523526}
+    - target: {fileID: 4510764764957306656, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4510764764957306656, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FreeProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4510764764957306656, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ThirdPersonController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4510764764957306656, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500265387979076731, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500265387979076731, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500265387979076731, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 778523526}
+    - target: {fileID: 7500265387979076731, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500265387979076731, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FreeProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500265387979076731, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ThirdPersonController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500265387979076731, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: OnFreeProjectile.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8360437240958138854, guid: ff669bd243159924c8642f4cff27e295,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27482,6 +27576,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8875470458085247313, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: simpleAttackProjectile
+      value: 
+      objectReference: {fileID: 153912, guid: ffb28b0974bee1d449c707917eafd7d8, type: 3}
+    - target: {fileID: 8875470458085247313, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: handPositions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875470458085247313, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: handPositions.Array.data[0]
+      value: 
+      objectReference: {fileID: 150342085}
+    - target: {fileID: 8875470458085247313, guid: ff669bd243159924c8642f4cff27e295,
+        type: 3}
+      propertyPath: handPositions.Array.data[1]
+      value: 
+      objectReference: {fileID: 966115056}
     - target: {fileID: 8909305122676983841, guid: ff669bd243159924c8642f4cff27e295,
         type: 3}
       propertyPath: m_Name

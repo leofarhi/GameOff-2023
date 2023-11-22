@@ -1,4 +1,5 @@
 ﻿ using System;
+ using System.Collections;
  using UnityEngine;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -22,6 +23,10 @@
         [Header("General Settings")]
         public InputPreset inputPreset;
         public static ThirdPersonController instance;
+        public IntValue lifeValue;
+        public IntValue maxLife;
+        public IntValue staminaValue;
+        public IntValue maxStamina;
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
@@ -62,6 +67,33 @@
 
         [Tooltip("What layers the character uses as ground")]
         public LayerMask GroundLayers;
+        
+        [Header("Attack")]
+        public int simpleAttackConsumption = 10;
+        public int specialAttackConsumption = 20;
+        public float temperatureAttack = 25f;
+        public GameObject simpleAttackProjectile;
+        public GameObject specialAttackProjectile;
+        public Transform[] handPositions;
+        private Transform _handPosition
+        {
+            get
+            {
+                return handPositions[handSelected ? 1 : 0];
+            }
+        }
+
+        private bool handSelected
+        {
+            set
+            {
+                _animator.SetFloat("Hand", value ? 1 : 0);
+            }
+            get
+            {
+                return _animator.GetFloat("Hand") > 0.5f;
+            }
+        }
         
         
         // player
@@ -166,6 +198,7 @@
 
             JumpAndGravity();
             GroundedCheck();
+            Attack();
             Move();
         }
 
@@ -404,6 +437,93 @@
             return Mathf.Clamp(lfAngle, lfMin, lfMax);
         }
 
+        public void Attack()
+        {
+            if (lockInput) return;
+            if (Grounded)
+            {
+                if (InputPreset.current.attackInput.GetButtonDown())
+                {
+                    StartCoroutine(AttackAnimation());
+                }
+            }
+        }
+        
+        public void FreeProjectile()
+        {
+            GameObject newProjectile = Instantiate(simpleAttackProjectile, _handPosition.position, transform.rotation);
+        }
+
+        private IEnumerator AttackAnimation()
+        {
+            //Lock input
+            LockInput();
+            //Play animation
+            string animationName = "SimpleAttack";
+            yield return null;
+            float checkTime = 0.15f;
+            while (InputPreset.current.attackInput.GetButton() && checkTime > 0f)
+            {
+                checkTime -= Time.deltaTime;
+                yield return null;
+            }
+            if (checkTime <= 0f)
+            {
+                animationName = "BigAttack";
+            }
+            _animator.PlayInFixedTime(animationName, 0, 0f);
+            yield return null;
+            //Wait until current animation is same as animationName
+            float animationLength = _animator.GetCurrentAnimatorStateInfo(0).length;
+            float animationTime = 0f;
+            while (_animator.GetCurrentAnimatorStateInfo(0).IsName(animationName))
+            {
+                if (!Grounded)
+                {
+                    //Exit animation
+                    _animator.PlayInFixedTime("Idle Walk Run Blend", 0, 0f);
+                    break;
+                }
+                if (animationName == "SimpleAttack")
+                {
+                    Vector2 moveInput = inputPreset.moveInput;
+                    // normalise input direction
+                    Vector3 inputDirection = new Vector3(moveInput.x, 0.0f, moveInput.y).normalized;
+
+                    // note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
+                    // if there is a move input rotate player when the player is moving
+                    if (moveInput != Vector2.zero)
+                    {
+                        _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + CameraMain.GetCameraRotationY();
+                        float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
+                            RotationSmoothTime);
+
+                        // rotate to face input direction relative to camera position
+                        transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+                    }
+                    if (animationTime >= animationLength / 2f)
+                    {
+                        if (InputPreset.current.attackInput.GetButtonDown())
+                        {
+                            handSelected = !handSelected;
+                            _animator.PlayInFixedTime(animationName, 0, 0.2f);
+                            animationTime = 0f;
+                            yield return null;
+                        }
+                    }
+                }
+                yield return null;
+                animationTime += Time.deltaTime;
+            }
+            UnlockInput();
+        }
+        
+        public void SetHand(int hand)
+        {
+            handSelected = (hand%2) == 0;
+        }
+        
+
         private void OnDrawGizmosSelected()
         {
             Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
@@ -439,4 +559,5 @@
         {
             GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
         }
+        
     }

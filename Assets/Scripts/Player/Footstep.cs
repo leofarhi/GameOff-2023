@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Footstep : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Footstep : MonoBehaviour
     public AudioClip LandingAudioClip;
     public AudioClip[] FootstepAudioClips;
     [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
+    [Header("Extra")]
+    public UnityEvent OnFreeProjectile;
     private void OnFootstep(AnimationEvent animationEvent)
     {
         if (animationEvent.animatorClipInfo.weight > 0.5f)
@@ -26,5 +29,10 @@ public class Footstep : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
         }
+    }
+    
+    public void FreeShoot()
+    {
+        OnFreeProjectile.Invoke();
     }
 }
