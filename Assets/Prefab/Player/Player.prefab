@@ -9750,6 +9750,10 @@ MonoBehaviour:
     type: 3}
   offsetParticleTransition: {x: 0, y: 0.5, z: 0}
   inputPreset: {fileID: 11400000, guid: 531779ab7bd77a14a91c89cdc50cde12, type: 2}
+  lifeValue: {fileID: 0}
+  maxLife: {fileID: 0}
+  staminaValue: {fileID: 0}
+  maxStamina: {fileID: 0}
   MoveSpeed: 3
   SprintSpeed: 5.335
   RotationSmoothTime: 0.12
@@ -9764,6 +9768,25 @@ MonoBehaviour:
   GroundLayers:
     serializedVersion: 2
     m_Bits: 385
+  simpleAttackConsumption: 10
+  specialAttackConsumption: 20
+  temperatureAttack: 25
+  AttackTemperatureState: 0
+  simpleAttackProjectile:
+    frostProjectile: {fileID: 5145038758526258137, guid: 2a9f61e93ea152c44b85a45c971806a0,
+      type: 3}
+    fireProjectile: {fileID: 2764505225411655348, guid: 92c04844b64812341818703a2d3ddeb5,
+      type: 3}
+  specialAttackProjectile:
+    frostProjectile: {fileID: 7935928298781797814, guid: 3176de2eb364ffb4286d405017fe4817,
+      type: 3}
+    fireProjectile: {fileID: 7935928298781797814, guid: 3176de2eb364ffb4286d405017fe4817,
+      type: 3}
+  handPositions:
+  - {fileID: 3074749779242917089}
+  - {fileID: 5575932246950542015}
+  - {fileID: 8803992664184660638}
+  - {fileID: 2153869450775020736}
   _animator: {fileID: 2619076585365891571}
   CameraMain: {fileID: 0}
 --- !u!114 &2581390790328099317
@@ -9892,6 +9915,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7500265387979076731}
   m_SourcePrefab: {fileID: 100100000, guid: 157f896f1637b4444b58de9f4fab1646, type: 3}
+--- !u!4 &2153869450775020736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4058852915679833821, guid: 157f896f1637b4444b58de9f4fab1646,
+    type: 3}
+  m_PrefabInstance: {fileID: 2717893660185553437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2467230009746001398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 157f896f1637b4444b58de9f4fab1646,
@@ -9930,6 +9959,27 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
   - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
   FootstepAudioVolume: 0.5
+  OnFreeProjectile:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8875470458085247313}
+        m_TargetAssemblyTypeName: ThirdPersonController, Assembly-CSharp
+        m_MethodName: FreeProjectile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &8803992664184660638 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6888806815857526915, guid: 157f896f1637b4444b58de9f4fab1646,
+    type: 3}
+  m_PrefabInstance: {fileID: 2717893660185553437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8444884745447691362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11854,6 +11904,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 8444884745447691362}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &3074749779242917089 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6888806815857526915, guid: c1480d7599c552a44911f29009af3d9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8444884745447691362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5575932246950542015 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4058852915679833821, guid: c1480d7599c552a44911f29009af3d9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8444884745447691362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8266630429020992393 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1480d7599c552a44911f29009af3d9f,
@@ -11892,3 +11954,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
   - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
   FootstepAudioVolume: 0.5
+  OnFreeProjectile:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8875470458085247313}
+        m_TargetAssemblyTypeName: ThirdPersonController, Assembly-CSharp
+        m_MethodName: FreeProjectile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

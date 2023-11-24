@@ -72,14 +72,16 @@
         public int simpleAttackConsumption = 10;
         public int specialAttackConsumption = 20;
         public float temperatureAttack = 25f;
-        public GameObject simpleAttackProjectile;
-        public GameObject specialAttackProjectile;
+        public TemperatureState AttackTemperatureState = TemperatureState.Cold;
+        public Projectile.ProjectilesPrefab simpleAttackProjectile;
+        public Projectile.ProjectilesPrefab specialAttackProjectile;
+        private Projectile currentProjectile;
         public Transform[] handPositions;
         private Transform _handPosition
         {
             get
             {
-                return handPositions[handSelected ? 1 : 0];
+                return handPositions[(handSelected ? 1 : 0)+ (_currentTemperatureState==TemperatureState.Cold ? 2 : 0)];
             }
         }
 
@@ -260,6 +262,11 @@
                     //Spawn hot transition particles
                     Instantiate(ParticleHotTransitionPrefab, transform.position+offsetParticleTransition, Quaternion.identity);
                     break;
+            }
+            if (currentProjectile!=null)
+            {
+                currentProjectile.transform.parent = _handPosition;
+                currentProjectile.transform.localPosition = Vector3.zero;
             }
         }
 
@@ -451,9 +458,22 @@
         
         public void FreeProjectile()
         {
-            GameObject newProjectile = Instantiate(simpleAttackProjectile, _handPosition.position, transform.rotation);
+            if (currentProjectile != null)
+            {
+                currentProjectile.FreeShoot(transform.forward);
+                currentProjectile = null;
+            }
         }
-
+        
+        public void SpawnProjectile(Projectile.ProjectilesPrefab projectilePrefab)
+        {
+            if (currentProjectile == null)
+            {
+                GameObject newProjectile = Instantiate(projectilePrefab.get(AttackTemperatureState), _handPosition.position, transform.rotation); 
+                newProjectile.transform.parent = _handPosition;
+                currentProjectile = newProjectile.GetComponent<Projectile>();
+            }
+        }
         private IEnumerator AttackAnimation()
         {
             //Lock input
@@ -472,6 +492,7 @@
                 animationName = "BigAttack";
             }
             _animator.PlayInFixedTime(animationName, 0, 0f);
+            SpawnProjectile(animationName == "BigAttack" ? specialAttackProjectile : simpleAttackProjectile);
             yield return null;
             //Wait until current animation is same as animationName
             float animationLength = _animator.GetCurrentAnimatorStateInfo(0).length;
@@ -507,6 +528,8 @@
                         {
                             handSelected = !handSelected;
                             _animator.PlayInFixedTime(animationName, 0, 0.2f);
+                            FreeProjectile();
+                            SpawnProjectile(simpleAttackProjectile);
                             animationTime = 0f;
                             yield return null;
                         }

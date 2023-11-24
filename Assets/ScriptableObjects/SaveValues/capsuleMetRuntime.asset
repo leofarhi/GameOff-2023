@@ -13,4 +13,14 @@ MonoBehaviour:
   m_Name: capsuleMetRuntime
   m_EditorClassIdentifier: 
   initialValue: []
-  RuntimeValue: []
+  RuntimeValue:
+  - type: 3
+    intValue: 0
+    floatValue: 0
+    boolValue: 0
+    stringValue: d2d2f35b-a1e5-4af9-a278-ae824bfe4fb5
+  - type: 3
+    intValue: 0
+    floatValue: 0
+    boolValue: 0
+    stringValue: ff1ab14b-3722-43ab-bf57-67921f0e6b13

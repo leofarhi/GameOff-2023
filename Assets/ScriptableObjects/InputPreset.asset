@@ -162,7 +162,7 @@ MonoBehaviour:
     useInput: 1
     isAxisInUse: 0
     isUnityInput: 0
-    keyboard: E
+    keyboard: R
     keyboardAxis: 0
     joystick: RightTrigger
     joystickAxis: 0

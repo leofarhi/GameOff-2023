@@ -29,7 +29,7 @@ public class TemperatureBehaviour : MonoBehaviour
     public float minTemperature = -20;
     public float maxTemperature = 70;
     
-    private TemperatureState _currentTemperatureState = TemperatureState.Normal;
+    protected TemperatureState _currentTemperatureState = TemperatureState.Normal;
     public TemperatureState currentTemperatureState
     {
         get
