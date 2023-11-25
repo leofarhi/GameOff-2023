@@ -4,12 +4,13 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: TranslucentCrystalv03
   m_Shader: {fileID: 4800000, guid: 39fe729f5dcad0d41bc1d8df009668cb, type: 3}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -91,6 +92,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -111,9 +113,11 @@ Material:
     - _SrcBlend: 1
     - _TransAmbient: 1
     - _TransDirect: 1
+    - _TransNormal: 0.2
     - _TransNormalDistortion: 0.2
     - _TransScattering: 7.5
     - _TransShadow: 0.9
+    - _TransStrength: 12.5
     - _Translucency: 12.5
     - _TranslucencyMaskPower: 1
     - _UVSec: 0

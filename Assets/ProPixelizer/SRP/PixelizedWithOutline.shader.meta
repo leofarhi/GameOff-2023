@@ -12,7 +12,6 @@ ShaderImporter:
   - unity_LightmapsInd: {instanceID: 0}
   - unity_ShadowMasks: {instanceID: 0}
   nonModifiableTextures: []
-  preprocessorOverride: 0
-  userData: 
+  userData: '{"shaderPath":"ProPixelizer/SRP/PixelizedWithOutline","attributes":[]}'
   assetBundleName: 
   assetBundleVariant: 

@@ -2,23 +2,39 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SnowyRock Displacement
-  m_Shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: FT_EDGE_TESS _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
+  m_Shader: {fileID: 4800000, guid: 71d6765ad72e11541bc1448c891bbcf9, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - PROPIXELIZER_DITHERING_ON
+  - RECEIVE_SHADOWS_ON
+  - USE_OBJECT_POSITION_ON
+  m_InvalidKeywords:
+  - FT_EDGE_TESS
+  - _METALLICGLOSSMAP
+  - _NORMALMAP
+  - _PARALLAXMAP
+  - _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: fddc43ac55d0ebb45b3d0b4c71ecc706, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 74aa54cf62d0981498c8580fd3066893, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -39,8 +55,16 @@ Material:
         m_Texture: {fileID: 2800000, guid: 55e28e3e66b24b74c811946bb5777b02, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Emission:
+        m_Texture: {fileID: 2800000, guid: 6be8c603bd489bc47a775fc69e48f1f4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightingRamp:
+        m_Texture: {fileID: 2800000, guid: 211497300d75d8e4b9b3e2913a93e908, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -51,8 +75,16 @@ Material:
         m_Texture: {fileID: 2800000, guid: 5abf4a4e42dac8f479ce6d9d4aa19965, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 74aa54cf62d0981498c8580fd3066893, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 2800000, guid: 6c2b86b5a00e5214ebfc8b15ea2f4a7b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PaletteLUT:
+        m_Texture: {fileID: 2800000, guid: cb20b3bfa4de9cd4084d3626193b6898, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -63,25 +95,49 @@ Material:
         m_Texture: {fileID: 2800000, guid: 2e961bc65673dcf439fb92ec1a427f2e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
+    - COLOR_GRADING: 0
+    - PROPIXELIZER_DITHERING: 1
+    - RECEIVE_SHADOWS: 1
+    - USE_OBJECT_POSITION: 1
+    - _AlphaClipThreshold: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailAO: 0.5
     - _DetailNormalMapScale: 1
     - _DiffuseAO: 0
+    - _DiffuseVertexColorWeight: 1
     - _DispOffset: 0
     - _DispPhong: 0
     - _Displacement: 1
     - _DstBlend: 0
+    - _EmissiveVertexColorWeight: 0
     - _GI_AO: 0
     - _GlossMapScale: 0.42
     - _Glossiness: 0
     - _GlossyReflections: 1
+    - _ID: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.08
     - _Phong: 0
+    - _PixelSize: 3
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _ShadowLOD: 0
     - _SmoothnessTextureChannel: 0
     - _SpecAO: 0
@@ -91,10 +147,24 @@ Material:
     - _Tess: 1
     - _TessMode: 1
     - _UVSec: 0
+    - _UseAoMap: 1
+    - _UseColorMap: 1
+    - _UseEmissiveMap: 0
+    - _UseMetallicMap: 1
+    - _UseNormalMap: 1
+    - _UseRoughnessMap: 1
     - _ZWrite: 1
     - _maxDist: 25
     m_Colors:
+    - _AmbientLight: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.8726415, g: 1, b: 0.99401385, a: 1}
     - _Displacement_TO: {r: 1, g: 1, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EdgeHighlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _EmissionColor: {r: 0.25710213, g: 0.8679245, b: 0.8118917, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0.5}
+    - _PixelGridOrigin: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
+    - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _UvTiling: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
