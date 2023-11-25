@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(SphereCollider))]
 public class Projectile : MonoBehaviour
 {
     [Serializable]
@@ -27,6 +28,8 @@ public class Projectile : MonoBehaviour
     }
 
     public Rigidbody rigidbody;
+    public SphereCollider collider;
+    public GameObject owner;
     public UnityEvent OnSpawn;
     public UnityEvent OnFree;
     public UnityEvent OnHit;
@@ -46,6 +49,22 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         
+    }
+    
+    public IEnumerator Dispawn()
+    {
+        rigidbody.isKinematic = true;
+        collider.enabled = false;
+        float time = 0;
+        Vector3 initialScale = gameObject.transform.localScale;
+        while (time < 1f)
+        {
+            gameObject.transform.localScale = Vector3.Lerp(initialScale, Vector3.zero, time);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        OnDestroy?.Invoke();
+        Destroy(gameObject);
     }
     
     public void FreeShoot(Vector3 direction)

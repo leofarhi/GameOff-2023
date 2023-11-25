@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4535220741974606392}
   - component: {fileID: 655334861518327133}
   - component: {fileID: 2436201528118396642}
+  - component: {fileID: 6054505591426907862}
   m_Layer: 0
   m_Name: SpecialProjectile
   m_TagString: Untagged
@@ -48,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 2436201528118396642}
+  collider: {fileID: 6054505591426907862}
+  owner: {fileID: 0}
   OnSpawn:
     m_PersistentCalls:
       m_Calls:
@@ -123,6 +126,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &6054505591426907862
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7935928298781797814}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3818406487999199501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -227,15 +251,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 470252, guid: dc45d356f9cc39149a47bc7e96bf12c4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5038
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 470252, guid: dc45d356f9cc39149a47bc7e96bf12c4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5038
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 470252, guid: dc45d356f9cc39149a47bc7e96bf12c4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5038
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 470252, guid: dc45d356f9cc39149a47bc7e96bf12c4, type: 3}
       propertyPath: m_LocalPosition.x

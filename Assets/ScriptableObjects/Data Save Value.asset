@@ -23,5 +23,9 @@ MonoBehaviour:
     playerPosition: {x: 13.288, y: 0.62600005, z: 3.255}
     playerRotation: {x: -0, y: -0, z: -0, w: 1}
   variablesValues:
+  - {fileID: 11400000, guid: 9bbf665a3597bd94a8ec650e280026bb, type: 2}
+  - {fileID: 11400000, guid: 06861f76e3eeef548b7a6a39fc4c6230, type: 2}
+  - {fileID: 11400000, guid: bd36d30b9bc29a54faca2045d04c3953, type: 2}
+  - {fileID: 11400000, guid: 471f733ad0698924785c3fe7a42bc3a8, type: 2}
   - {fileID: 11400000, guid: b486cac06cbc7a94c9d8710c22b9d304, type: 2}
   - {fileID: 11400000, guid: 16bf6e1d6110883439d6dec6776700bf, type: 2}

@@ -9750,10 +9750,10 @@ MonoBehaviour:
     type: 3}
   offsetParticleTransition: {x: 0, y: 0.5, z: 0}
   inputPreset: {fileID: 11400000, guid: 531779ab7bd77a14a91c89cdc50cde12, type: 2}
-  lifeValue: {fileID: 0}
-  maxLife: {fileID: 0}
-  staminaValue: {fileID: 0}
-  maxStamina: {fileID: 0}
+  lifeValue: {fileID: 11400000, guid: 9bbf665a3597bd94a8ec650e280026bb, type: 2}
+  maxLife: {fileID: 11400000, guid: bd36d30b9bc29a54faca2045d04c3953, type: 2}
+  staminaValue: {fileID: 11400000, guid: 06861f76e3eeef548b7a6a39fc4c6230, type: 2}
+  maxStamina: {fileID: 11400000, guid: 471f733ad0698924785c3fe7a42bc3a8, type: 2}
   MoveSpeed: 3
   SprintSpeed: 5.335
   RotationSmoothTime: 0.12
