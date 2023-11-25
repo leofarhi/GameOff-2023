@@ -102,6 +102,8 @@ public class TemperatureBehaviour : MonoBehaviour
     public virtual void Update()
     {
         UpdateSate();
+        //Remove temperature areas that are destroyed or disabled
+        temperatureAreas.RemoveAll(area => area == null || !area.gameObject.activeSelf);
         if (temperatureAreas.Count > 0)
         {
             float temperature = 0;
