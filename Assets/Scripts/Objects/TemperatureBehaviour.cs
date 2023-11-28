@@ -118,6 +118,8 @@ public class TemperatureBehaviour : MonoBehaviour
         {
             ChangeTemperatureProgressively(stableTemperature);
         }
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("fm_temperature", currentTemperature);
     }
     
     public virtual void OnTemperatureStateChangeCallback(TemperatureState old,TemperatureState state)
