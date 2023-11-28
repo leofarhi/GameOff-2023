@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{546f00b6-af18-411a-ab58-106ffb3e548a}">
 		<property name="name">
-			<value>Temperature</value>
+			<value>fm_temperature</value>
 		</property>
 		<relationship name="folder">
 			<destination>{e01651eb-4b0a-4b60-a943-d31c20f0e2b9}</destination>
