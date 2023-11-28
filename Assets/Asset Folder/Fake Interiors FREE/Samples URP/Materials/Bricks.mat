@@ -8,18 +8,28 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bricks
-  m_Shader: {fileID: 4800000, guid: 446239b363b0de7429aa74d4d319ecd3, type: 3}
-  m_ValidKeywords: []
+  m_Shader: {fileID: 4800000, guid: 71d6765ad72e11541bc1448c891bbcf9, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - PROPIXELIZER_DITHERING_ON
+  - RECEIVE_SHADOWS_ON
+  - USE_OBJECT_POSITION_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: 145a72a5927189146b837129ae9590a0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Brick_A:
         m_Texture: {fileID: 2800000, guid: 145a72a5927189146b837129ae9590a0, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -64,12 +74,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Emission:
+        m_Texture: {fileID: 2800000, guid: 03c8f0b529da097468dbc40201fa2b8c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Height:
         m_Texture: {fileID: 2800000, guid: 6ee01de89230c5145b816b8fd2bd27b2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightingRamp:
+        m_Texture: {fileID: 2800000, guid: 211497300d75d8e4b9b3e2913a93e908, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -80,8 +98,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: e2f374f43d66c9647a243c4972f11b11, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PaletteLUT:
+        m_Texture: {fileID: 2800000, guid: f649cbc58189f5141ad422e49af19117, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -138,11 +164,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - COLOR_GRADING: 0
+    - PROPIXELIZER_DITHERING: 1
+    - RECEIVE_SHADOWS: 1
+    - USE_OBJECT_POSITION: 1
+    - _AlphaClipThreshold: 0.5
     - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DiffuseVertexColorWeight: 1
     - _DstBlend: 0
+    - _EmissiveVertexColorWeight: 0
     - _EnvironmentReflections: 1
     - _Float0: 0
     - _Float1: 1
@@ -156,11 +189,13 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Height: 0.0151
+    - _ID: 1
     - _Metallic: 0
     - _Mode: 0
     - _NormalIntensity: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PixelSize: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -172,6 +207,11 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
+    - _AmbientLight: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeHighlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0.5}
+    - _PixelGridOrigin: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

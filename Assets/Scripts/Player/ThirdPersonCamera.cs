@@ -14,6 +14,7 @@ public class ThirdPersonCamera : MonoBehaviour
     public float size = 2f;
     public float shiftCameraRotationY = 0f;
     public bool useOnlyShiftRotation = false;
+    public bool isPerspective = false;
 
     [HideInInspector]
     public List<CameraArea> _cameraAreas = new List<CameraArea>();
@@ -39,6 +40,7 @@ public class ThirdPersonCamera : MonoBehaviour
             size = area.size;
             shiftCameraRotationY = area.shiftCameraRotationY;
             useOnlyShiftRotation = area.useOnlyShiftRotation;
+            isPerspective = area.isPerspective;
         }
     }
     
@@ -65,6 +67,11 @@ public class ThirdPersonCamera : MonoBehaviour
         Vector3 desiredPosition = player.transform.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position- shift, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
+        if (isPerspective==Camera.main.orthographic)
+        {
+            Camera.main.orthographic = !isPerspective;
+            transform.position = desiredPosition;
+        }
         if (smoothRotation)
         {
             Quaternion desiredRotation = Quaternion.LookRotation(player.transform.position - (transform.position- shift));

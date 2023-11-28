@@ -12,6 +12,7 @@ public class CameraArea : MonoBehaviour
     public float size = 2f;
     public float shiftCameraRotationY = 0f;
     public bool useOnlyShiftRotation = false;
+    public bool isPerspective = false;
     void OnDrawGizmos()
     {
         Color color = Color.green;

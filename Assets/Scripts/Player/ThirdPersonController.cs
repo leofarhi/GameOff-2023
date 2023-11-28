@@ -538,6 +538,8 @@
                 yield return null;
                 animationTime += Time.deltaTime;
             }
+            if (currentProjectile != null)
+                DestroyImmediate(currentProjectile.gameObject);
             UnlockInput();
         }
         
