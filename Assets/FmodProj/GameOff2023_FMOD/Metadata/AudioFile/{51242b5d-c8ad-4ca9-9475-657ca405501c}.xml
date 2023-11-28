@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{51242b5d-c8ad-4ca9-9475-657ca405501c}">
+		<property name="assetPath">
+			<value>Mx_01_Intro_Main_1.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>17.454562500000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b88cfec7-8140-49fa-978f-8ae8791f8ddd}</destination>
+		</relationship>
+	</object>
+</objects>
