@@ -197,6 +197,8 @@
         {
             base.Update();
             _hasAnimator = _animator != null;
+            
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Temperature", (float)_currentTemperatureState);
 
             JumpAndGravity();
             GroundedCheck();

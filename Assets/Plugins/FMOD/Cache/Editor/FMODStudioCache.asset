@@ -78,7 +78,7 @@ MonoBehaviour:
   - {fileID: 1628400859941199258}
   StringsBanks:
   - {fileID: 5654787617381821802}
-  cacheTime: 638367711826590554
+  cacheTime: 638367446620000000
   cacheVersion: 131609
 --- !u!114 &1628400859941199258
 MonoBehaviour:
@@ -95,7 +95,7 @@ MonoBehaviour:
   Path: Assets/FmodProj/GameOff2023_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638367711826570530
+  lastModified: 638367446620000000
   FileSizes:
   - Name: Desktop
     Value: 3202176
@@ -139,7 +139,7 @@ MonoBehaviour:
   Path: Assets/FmodProj/GameOff2023_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638367711826590554
+  lastModified: 638367446620000000
   FileSizes:
   - Name: Desktop
     Value: 926
