@@ -61,6 +61,7 @@ public class SettingsValue : ScriptableObject
     public void SetGeneralVolume(float generalVolume)
     {
         this.generalVolume = generalVolume;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("fm_volume_master", generalVolume);
         if (generalVolume == 0)
             this.audioMixer.SetFloat("MasterVolume", -80);
         else
@@ -70,6 +71,7 @@ public class SettingsValue : ScriptableObject
     public void SetMusicVolume(float musicVolume)
     {
         this.musicVolume = musicVolume;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("fm_volume_mx", musicVolume);
         if (musicVolume == 0)
             this.audioMixer.SetFloat("MusicVolume", -80);
         else
@@ -79,6 +81,7 @@ public class SettingsValue : ScriptableObject
     public void SetSfxVolume(float sfxVolume)
     {
         this.sfxVolume = sfxVolume;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("fm_volume_sfx", sfxVolume);
         if (sfxVolume == 0)
             this.audioMixer.SetFloat("SoundsVolume", -80);
         else

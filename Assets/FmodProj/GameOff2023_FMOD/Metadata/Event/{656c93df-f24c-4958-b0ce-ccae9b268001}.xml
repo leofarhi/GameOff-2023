@@ -85,7 +85,7 @@
 	</object>
 	<object class="GroupTrack" id="{c841fb9c-c4a9-4bd2-a5a7-9ffd932799b1}">
 		<relationship name="automationTracks">
-			<destination>{2403f6d7-a7d7-4d3e-8264-adb294bee49e}</destination>
+			<destination>{c924beef-1827-4d27-b8f8-82df54763392}</destination>
 		</relationship>
 		<relationship name="modules">
 			<destination>{cb554d10-6a7a-47ea-ab17-598f09e3deca}</destination>
@@ -245,7 +245,7 @@
 			<destination>{bcfd2097-df9b-4ec8-8bf0-863817d62046}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationTrack" id="{2403f6d7-a7d7-4d3e-8264-adb294bee49e}">
+	<object class="AutomationTrack" id="{c924beef-1827-4d27-b8f8-82df54763392}">
 		<relationship name="automator">
 			<destination>{709d3b45-c3fa-4731-8d8c-ee0bab2ee8e1}</destination>
 		</relationship>
@@ -477,7 +477,7 @@
 			<value>70</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-4</value>
 		</property>
 	</object>
 </objects>
