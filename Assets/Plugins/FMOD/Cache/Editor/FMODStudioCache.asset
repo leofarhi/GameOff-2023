@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9205301366771604225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUSIC/Music_Event
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/Music_Event
+  Guid:
+    Data1: 1003645069
+    Data2: 1125402848
+    Data3: 2035442847
+    Data4: 1448062617
+  Banks:
+  - {fileID: 1628400859941199258}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6593827948694313445}
+  - {fileID: 1746833596300243432}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 65454
+--- !u!114 &-8185332496929204828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/isFighting
+  m_EditorClassIdentifier: 
+  Name: isFighting
+  StudioPath: parameter:/isFighting
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2390732220
+    data2: 725914954
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,12 +70,15 @@ MonoBehaviour:
   - {fileID: 1628400859941199258}
   EditorEvents:
   - {fileID: 7500159378236205557}
-  EditorParameters: []
+  - {fileID: -9205301366771604225}
+  EditorParameters:
+  - {fileID: -8185332496929204828}
+  - {fileID: 8388730185371989166}
   MasterBanks:
   - {fileID: 1628400859941199258}
   StringsBanks:
   - {fileID: 5654787617381821802}
-  cacheTime: 638364428200000000
+  cacheTime: 638367711826590554
   cacheVersion: 131609
 --- !u!114 &1628400859941199258
 MonoBehaviour:
@@ -39,10 +95,34 @@ MonoBehaviour:
   Path: Assets/FmodProj/GameOff2023_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638364428200000000
+  lastModified: 638367711826570530
   FileSizes:
   - Name: Desktop
-    Value: 4640
+    Value: 3202176
+  Exists: 1
+--- !u!114 &1746833596300243432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event/Temperature
+  m_EditorClassIdentifier: 
+  Name: Temperature
+  StudioPath: 
+  Min: -100
+  Max: 100
+  Default: 0
+  ID:
+    data1: 683562004
+    data2: 1350190632
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &5654787617381821802
 MonoBehaviour:
@@ -59,10 +139,34 @@ MonoBehaviour:
   Path: Assets/FmodProj/GameOff2023_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638364428200000000
+  lastModified: 638367711826590554
   FileSizes:
   - Name: Desktop
-    Value: 760
+    Value: 926
+  Exists: 1
+--- !u!114 &6593827948694313445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event/isFighting
+  m_EditorClassIdentifier: 
+  Name: isFighting
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2390732220
+    data2: 725914954
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &7500159378236205557
 MonoBehaviour:
@@ -91,3 +195,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &8388730185371989166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Temperature
+  m_EditorClassIdentifier: 
+  Name: Temperature
+  StudioPath: parameter:/Temperature
+  Min: -100
+  Max: 100
+  Default: 0
+  ID:
+    data1: 683562004
+    data2: 1350190632
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
