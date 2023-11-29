@@ -1763,7 +1763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58f862601dfe3047a15e578f12470a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToPersist: []
+  objectsToPersist:
+  - {fileID: 1525502918}
   eventSystem: {fileID: 1706901723}
   languageSystemValue: {fileID: 11400000, guid: 58a1233f11dd2934d836f9fbb57f7a3a,
     type: 2}

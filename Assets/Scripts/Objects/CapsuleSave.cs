@@ -37,20 +37,28 @@ public class CapsuleSave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Start capsule"+uuid);
         animator.enabled = false;
         DataSaveValue dataSaveValue = PersistenceDataScene.Instance.dataSaveValue;
         if (dataSaveValue.RuntimeValue.playerPosition == spawnPoint.position)
         {
+            Debug.Log("Spawn in this capsule");
             //Spawn in this capsule
-            ThirdPersonController.instance.transform.position = spawnPoint.position;
-            ThirdPersonController.instance.transform.rotation = spawnPoint.rotation;
-            dataSaveValue.RuntimeValue.playerPosition = Vector3.zero;
             StartCoroutine(SpawnAnimation());
         }
     }
     
     IEnumerator SpawnAnimation()
     {
+        Debug.Log("Spawn animation");
+        DataSaveValue dataSaveValue = PersistenceDataScene.Instance.dataSaveValue;
+        while (ThirdPersonController.instance == null)
+        {
+            yield return null;
+        }
+        ThirdPersonController.instance.GetComponent<GroundCollider>().ForceTeleport(spawnPoint.position);
+        ThirdPersonController.instance.transform.rotation = spawnPoint.rotation;
+        dataSaveValue.RuntimeValue.playerPosition = Vector3.zero;
         ThirdPersonController.instance.LockInput();
         yield return new WaitForSeconds(1f);
         animator.enabled = true;

@@ -15,6 +15,12 @@ public class GroundCollider : MonoBehaviour
         lastPosition = transform.position;
     }
     
+    public void ForceTeleport(Vector3 position)
+    {
+        lastPosition = position;
+        transform.position = position;
+    }
+    
     // Update is called once per frame
     private void FixedUpdate()
     {

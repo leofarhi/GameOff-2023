@@ -118,18 +118,21 @@ public class PersistenceDataScene : MonoBehaviour
     public void SaveGame()
     {
         dataSaveValue.Save(dataSaveValue.RuntimeValue.saveName);
+        OpenOrCloseSavePanel(false);
     }
     
     public void SaveAndQuit()
     {
         SaveGame();
         ReturnToMainMenu();
+        OpenOrCloseSavePanel(false);
     }
     
     public void ReturnToMainMenu()
     {
         dataSaveValue.Reset();
         LoadScene("MainMenu");
+        OpenOrCloseSavePanel(false);
     }
     
     public void OpenOrCloseSavePanel(bool open)

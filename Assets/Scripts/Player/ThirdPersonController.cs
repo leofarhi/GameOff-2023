@@ -1,5 +1,6 @@
 ﻿ using System;
  using System.Collections;
+ using System.Collections.Generic;
  using UnityEngine;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -135,7 +136,7 @@
         private bool _hasAnimator;
         
         //lock input
-        private uint _lockInputCount = 0;
+        private int _lockInputCount = 0;
         public bool lockInput
         {
             get
@@ -159,6 +160,8 @@
         {
             instance = this;
             FindCamera();
+            if (GameStateManager.Instance.CurrentGameState!=GameState.Gameplay)
+                LockInput();
             
         }
         
@@ -458,11 +461,50 @@
             }
         }
         
+        public GameObject DetectTarget()
+        {
+            List<GameObject> enemies = new List<GameObject>();
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10f);
+            foreach (var hitCollider in hitColliders)
+            {
+                if (hitCollider.gameObject.CompareTag("Enemy"))
+                {
+                    enemies.Add(hitCollider.gameObject);
+                }
+            }
+            GameObject target = null;
+            float minDistance = 100f;
+            //check if enemy is in view angle
+            foreach (var enemy in enemies)
+            {
+                Vector3 direction = enemy.transform.position - transform.position;
+                float angle = Vector3.Angle(direction, transform.forward);
+                if (angle < 45f)
+                {
+                    float distance = Vector3.Distance(enemy.transform.position, transform.position);
+                    if (distance < minDistance)
+                    {
+                        minDistance = distance;
+                        target = enemy;
+                    }
+                }
+            }
+            return target;
+        }
+        
         public void FreeProjectile()
         {
             if (currentProjectile != null)
             {
-                currentProjectile.FreeShoot(transform.forward);
+                GameObject target = DetectTarget();
+                if (target == null)
+                {
+                    currentProjectile.FreeShoot(transform.forward);
+                }
+                else
+                {
+                    currentProjectile.FreeShoot(target.transform.position - transform.position);
+                }
                 currentProjectile = null;
             }
         }

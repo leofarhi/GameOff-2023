@@ -81,3 +81,143 @@ MonoBehaviour:
     text:
     - INITIAL_TEXT
     - INITIAL_TEXT
+  - uuid: d95ae1e0-fe63-449c-9682-340306307e64
+    text:
+    - INITIAL_TEXT
+    - INITIAL_TEXT
+  - uuid: 90135481-37c4-4cdf-910c-2eb59f549727
+    text:
+    - INITIAL_TEXT
+    - INITIAL_TEXT
+  - uuid: 59cb857a-e9b2-414b-a143-6e57ba94f97c
+    text:
+    - INITIAL_TEXT
+    - INITIAL_TEXT
+  - uuid: 02012513-b1ef-4bee-960b-5f40e5c4fc55
+    text:
+    - INITIAL_TEXT
+    - INITIAL_TEXT
+  - uuid: 45140aac-ed46-4922-9ec5-8f25c0431107
+    text:
+    - "Param\xE8tres des Mouvements"
+    - "Param\xE8tres des Mouvements"
+  - uuid: 675e8cf9-6f33-4fd0-88fe-8562f6946ccd
+    text:
+    - Annuler
+    - Annuler
+  - uuid: 1d8fe3a7-b421-4f74-abbd-7684dd7a048c
+    text:
+    - Langue
+    - Langue
+  - uuid: 249a21af-003e-4dd5-a98f-14d530d5b715
+    text:
+    - "R\xE9initialiser tous les param\xE8tres"
+    - "R\xE9initialiser tous les param\xE8tres"
+  - uuid: a3302d39-9fd9-4942-8339-16c916f15b64
+    text:
+    - "Contr\xF4les"
+    - "Contr\xF4les"
+  - uuid: cb9507c6-c9c8-47dd-99da-e6ac7f14eb8f
+    text:
+    - "R\xE9affecter les touches"
+    - "R\xE9affecter les touches"
+  - uuid: b36807b3-4897-457b-8072-c44caa355f5f
+    text:
+    - Controlleur
+    - Controlleur
+  - uuid: 79842d7c-7e44-4a85-8504-d67ecd352b14
+    text:
+    - Options Graphiques
+    - Options Graphiques
+  - uuid: f3a25d05-4c1e-4450-be0c-e7825968f8b5
+    text:
+    - "R\xE9solution"
+    - "R\xE9solution"
+  - uuid: e43cdc7c-0cc8-4086-b557-53ed53714f7f
+    text:
+    - "Plein \xE9cran"
+    - "Plein \xE9cran"
+  - uuid: f9e3a358-db4d-41b4-8599-0dba09166826
+    text:
+    - Options Sonores
+    - Options Sonores
+  - uuid: 2e24a3b8-7fc5-4433-aa47-b9f3339b57d4
+    text:
+    - "Volume g\xE9n\xE9rale"
+    - "Volume g\xE9n\xE9rale"
+  - uuid: 91996fbd-0f77-4348-a030-bab952467c7f
+    text:
+    - Volume des effets
+    - Volume des effets
+  - uuid: 8d63d65a-b592-4ff1-81aa-82070c5dcb50
+    text:
+    - Volume de la musique
+    - Volume de la musique
+  - uuid: 3f80732c-8a64-4ad7-8442-968882449813
+    text:
+    - Options
+    - Options
+  - uuid: 617e6074-b4ef-4e85-ab05-2b11c7f82a00
+    text:
+    - Retour
+    - Retour
+  - uuid: e66a81ea-ef4f-409c-b9a7-adc456ad4e70
+    text:
+    - "Param\xE8tres de la Camera"
+    - "Param\xE8tres de la Camera"
+  - uuid: 0a08fb2e-78c1-433a-bddc-0c8f1b143da3
+    text:
+    - "D\xE9placements horizontaux"
+    - "D\xE9placements horizontaux"
+  - uuid: 33495e9e-e4eb-4c85-9dcc-a3835f92814c
+    text:
+    - "D\xE9placements verticaux"
+    - "D\xE9placements verticaux"
+  - uuid: 5ce98d52-c844-4ac0-b852-1d1174d93646
+    text:
+    - Avancer
+    - Avancer
+  - uuid: ecf30044-afa4-4fcc-aaaf-e4b95aab1736
+    text:
+    - Droite
+    - Droite
+  - uuid: 225d3279-6859-48d9-99ff-c7ded391b90c
+    text:
+    - "Param\xE8tres d'actions"
+    - "Param\xE8tres d'actions"
+  - uuid: 86310469-7d7e-4764-be5a-1d03347cc682
+    text:
+    - Menu Pause
+    - Menu Pause
+  - uuid: e265274d-55c1-4d38-8917-aba1eb57afa6
+    text:
+    - Courir
+    - Courir
+  - uuid: e81f08d6-e889-4f20-a880-93051609b710
+    text:
+    - Sauter
+    - Sauter
+  - uuid: 3074a49e-4acf-48b3-9a5b-c9b44bf79546
+    text:
+    - Action
+    - Action
+  - uuid: 652a50d5-bbd0-4e5c-8ebd-2c7572d0ec68
+    text:
+    - Sauvegardes
+    - Sauvegardes
+  - uuid: d505ad7b-47c7-4a83-917f-a1667e4c97e2
+    text:
+    - Retour
+    - Retour
+  - uuid: 57b6b05a-8d72-498b-b4a0-79d4c413d0cc
+    text:
+    - Nouvelle Partie
+    - Nouvelle Partie
+  - uuid: 0943a3c5-1730-49a5-8a61-8251ee53c16d
+    text:
+    - Charger
+    - Charger
+  - uuid: 339303f6-1337-478a-aae0-d020058378e9
+    text:
+    - Supprimer
+    - Supprimer

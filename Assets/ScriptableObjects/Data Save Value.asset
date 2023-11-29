@@ -12,16 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20890414c789a84fbb39fa96083b698, type: 3}
   m_Name: Data Save Value
   m_EditorClassIdentifier: 
+  excludeScenes:
+  - MainMenu
+  - System
   initialValue:
     saveName: 
-    scenesLoaded: []
-    playerPosition: {x: 0, y: 0, z: 0}
+    scenesLoaded:
+    - LVL1
+    playerPosition: {x: 13.288, y: 0.626, z: 3.255}
     playerRotation: {x: 0, y: 0, z: 0, w: 0}
   RuntimeValue:
-    saveName: Test
-    scenesLoaded: []
-    playerPosition: {x: 13.288, y: 0.62600005, z: 3.255}
-    playerRotation: {x: -0, y: -0, z: -0, w: 1}
+    saveName: save0
+    scenesLoaded:
+    - LVL1
+    - LVL1
+    playerPosition: {x: 0, y: 0, z: 0}
+    playerRotation: {x: 0, y: 0, z: 0, w: 0}
   variablesValues:
   - {fileID: 11400000, guid: 9bbf665a3597bd94a8ec650e280026bb, type: 2}
   - {fileID: 11400000, guid: 06861f76e3eeef548b7a6a39fc4c6230, type: 2}

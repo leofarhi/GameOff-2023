@@ -9,7 +9,7 @@ using UnityEngine;
 [System.Serializable]
 public class DataSaveValue : SystemValue
 {
-
+    public List<string> excludeScenes = new List<string>();
     public static string folderPath
     {
         get
@@ -69,7 +69,7 @@ public class DataSaveValue : SystemValue
     [Space(10)]
     public List<VariablesValue> variablesValues = new List<VariablesValue>();
 
-    public void Save(string saveName)
+    public void Save(string saveName, bool fromReset = false)
     {
         if (!Directory.Exists(folderPath))
         {
@@ -79,7 +79,20 @@ public class DataSaveValue : SystemValue
         FileStream file  = new FileStream(path, FileMode.OpenOrCreate);
         BinaryWriter binary = new BinaryWriter(file);
         //Save extra data
-        RuntimeValue.scenesLoaded = new List<string>(UnityEngine.SceneManagement.SceneManager.GetAllScenes().Select(x => x.name));
+        if (!fromReset)
+        {
+            RuntimeValue.scenesLoaded =
+                new List<string>(UnityEngine.SceneManagement.SceneManager.GetAllScenes().Select(x => x.name));
+            //exclude scenes
+            foreach (string scene in excludeScenes)
+            {
+                RuntimeValue.scenesLoaded.Remove(scene);
+            }
+        }
+        //remove duplicates and nulls
+        RuntimeValue.scenesLoaded = RuntimeValue.scenesLoaded.Distinct().ToList();
+        RuntimeValue.scenesLoaded.RemoveAll(x => x == null);
+        RuntimeValue.saveName = saveName;
         RuntimeValue.Write(binary);
         //Save variables
         foreach (VariablesValue value in variablesValues)
@@ -115,7 +128,7 @@ public class DataSaveValue : SystemValue
         if (!File.Exists(path))
         {
             Reset();
-            Save(saveName);
+            Save(saveName, true);
         }
         else
         {
@@ -131,9 +144,13 @@ public class DataSaveValue : SystemValue
             binary.Close();
             file.Close();
         }
+        //remove duplicates and nulls
+        RuntimeValue.scenesLoaded = RuntimeValue.scenesLoaded.Distinct().ToList();
+        RuntimeValue.scenesLoaded.RemoveAll(x => x == null);
         //Load scenes
         foreach (string scene in RuntimeValue.scenesLoaded)
         {
+            Debug.Log("Load scene: " + scene);
             //Load First Scene
             if (scene == RuntimeValue.scenesLoaded[0])
             {
@@ -149,6 +166,6 @@ public class DataSaveValue : SystemValue
     public void NewSave(string saveName)
     {
         Reset();
-        Save(saveName);
+        Save(saveName, true);
     }
 }

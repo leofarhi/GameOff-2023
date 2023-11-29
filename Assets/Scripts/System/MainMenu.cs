@@ -10,9 +10,10 @@ public class MainMenu : MonoBehaviour
     {
         get { return PersistenceDataScene.Instance; }
     }
-    
+    public GameObject MainMenuPanel;
+    public GameObject LoadGameMenuPanel;
     public GameObject loadGameBox;
-    private List<GameObject> loadGameBoxInstances = new List<GameObject>();
+    private List<SaveLoadStateMenu> loadGameBoxInstances = new List<SaveLoadStateMenu>();
     private List<string> saveNames = new List<string>();
 
     private void Start()
@@ -30,9 +31,9 @@ public class MainMenu : MonoBehaviour
     
     public void UpdateSaves()
     {
-        foreach (GameObject obj in loadGameBoxInstances)
+        foreach (SaveLoadStateMenu obj in loadGameBoxInstances)
         {
-            Destroy(obj);
+            Destroy(obj.gameObject);
         }
         loadGameBoxInstances.Clear();
         saveNames.Clear();
@@ -41,17 +42,26 @@ public class MainMenu : MonoBehaviour
         {
             if (file.EndsWith(".save"))
             {
-                string[] split = file.Split('\\');
-                string[] split2 = split[split.Length - 1].Split('.');
-                saveNames.Add(split2[0]);
+                saveNames.Add(System.IO.Path.GetFileNameWithoutExtension(file));
             }
         }
         for (int i = 0; i < saveNames.Count; i++)
         {
             GameObject obj = Instantiate(loadGameBox, loadGameBox.transform.parent);
             obj.SetActive(true);
-            loadGameBoxInstances.Add(obj);
+            SaveLoadStateMenu saveLoadStateMenu = obj.GetComponent<SaveLoadStateMenu>();
+            SetupGameBox(saveLoadStateMenu,saveNames[i]);
+            loadGameBoxInstances.Add(saveLoadStateMenu);
         }
+    }
+
+    public void SetupGameBox(SaveLoadStateMenu saveLoadStateMenu,string saveName)
+    {
+        saveLoadStateMenu.saveText.text = saveName;
+        saveLoadStateMenu.LoadButton.onClick.AddListener(delegate { LoadGameButton(saveName); });
+        saveLoadStateMenu.DeleteButton.onClick.AddListener(delegate { DeleteGameButton(saveName);
+            UpdateSaves();
+        });
     }
     
     public void PlayButton()
@@ -60,6 +70,11 @@ public class MainMenu : MonoBehaviour
         if (saveNames.Count == 0)
         {
             NewGameButton();
+        }
+        else
+        {
+            LoadGameMenuPanel.SetActive(true);
+            MainMenuPanel.SetActive(false);
         }
     }
     
