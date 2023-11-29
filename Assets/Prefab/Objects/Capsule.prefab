@@ -2085,7 +2085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdcf3524e6c002c42a13323a662387ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uuid: 
+  uuid: 909d5a6b-1d20-4f52-a517-ffc5eaf9df37
   spawnPoint: {fileID: 6863835627800967730}
   rangeTrigger: 1.01
   animator: {fileID: 1598483361093467905}

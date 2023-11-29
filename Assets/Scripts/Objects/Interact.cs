@@ -64,6 +64,7 @@ public class Interact : MonoBehaviour
     
     public void InteractWith()
     {
+
         if (isInteractable)
         {
             onInteract.Invoke();

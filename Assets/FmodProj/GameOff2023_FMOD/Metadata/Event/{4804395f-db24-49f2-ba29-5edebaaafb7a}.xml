@@ -54,12 +54,12 @@
 			<destination>{8b739390-7503-4dd8-8045-c07cb9e2fa37}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{cad9b428-6523-44cb-bbfc-0195f80f7c71}</destination>
+			<destination>{ebcf951b-939b-4507-83bf-1b5c791c9f83}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{dc911a83-bc38-4560-be0a-876df31f1958}">
 		<property name="maximumDistance">
-			<value>25</value>
+			<value>10</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{7ef15856-2b01-4d91-ba9f-7b9cd2ac1061}" />
@@ -109,6 +109,9 @@
 		<property name="isAsync">
 			<value>true</value>
 		</property>
+		<property name="start">
+			<value>7</value>
+		</property>
 		<property name="length">
 			<value>9.2119166666666672</value>
 		</property>
@@ -141,6 +144,9 @@
 		<property name="isAsync">
 			<value>true</value>
 		</property>
+		<property name="start">
+			<value>7</value>
+		</property>
 		<property name="length">
 			<value>9.2119166666666672</value>
 		</property>
@@ -170,7 +176,7 @@
 	</object>
 	<object class="LoopRegion" id="{af0170fc-9cc4-4334-9904-d50b8d48b41c}">
 		<property name="position">
-			<value>0</value>
+			<value>7</value>
 		</property>
 		<property name="length">
 			<value>9.2119166666666672</value>
@@ -190,10 +196,13 @@
 	</object>
 	<object class="MixerBusPanner" id="{3ace8087-a47c-48dd-ac03-01072cda9a0e}">
 		<property name="surroundPanDirection">
-			<value>-8.01916968e-08</value>
+			<value>-7.05687171e-08</value>
 		</property>
 		<property name="surroundPanExtent">
-			<value>149.866669</value>
+			<value>115.999992</value>
+		</property>
+		<property name="surroundLFELevel">
+			<value>-13</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{dda04542-b14f-40d4-a447-01451063b0b2}" />
