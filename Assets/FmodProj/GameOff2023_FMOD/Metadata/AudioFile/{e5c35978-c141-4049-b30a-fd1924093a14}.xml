@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e5c35978-c141-4049-b30a-fd1924093a14}">
+		<property name="assetPath">
+			<value>SFX_Amb_Outside_Loop.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>35</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b88cfec7-8140-49fa-978f-8ae8791f8ddd}</destination>
+		</relationship>
+	</object>
+</objects>

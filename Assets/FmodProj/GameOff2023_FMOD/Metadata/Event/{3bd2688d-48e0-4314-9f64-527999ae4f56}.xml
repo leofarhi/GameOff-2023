@@ -38,8 +38,6 @@
 		<relationship name="parameters">
 			<destination>{c2257162-ee7c-47f4-b125-2196c3b91612}</destination>
 			<destination>{3b632e3e-4166-4df6-b193-4e48b4aeebbf}</destination>
-			<destination>{2ad852ea-3d0d-4229-8b15-7531d3a64518}</destination>
-			<destination>{1a209eae-8da6-4d43-a44a-83bf663d8e3a}</destination>
 		</relationship>
 		<relationship name="banks">
 			<destination>{f7d25100-38df-415c-ae9b-ab6c172ad049}</destination>
@@ -54,7 +52,6 @@
 		<relationship name="automationTracks">
 			<destination>{7c8e45f9-5b75-476a-86b7-a34f52b8ac3c}</destination>
 			<destination>{2fe22077-2f59-465e-b95a-b0d934baf8ce}</destination>
-			<destination>{88061d19-4799-4d6f-a83c-4af0e0db877e}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{44583db1-f7fc-462c-bf96-266764624856}</destination>
@@ -68,7 +65,7 @@
 			<destination>{5ab92637-3a3f-494b-930c-a6f1ae14c4d9}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{cad9b428-6523-44cb-bbfc-0195f80f7c71}</destination>
+			<destination>{7309372f-4beb-4e4f-9213-bba7be634149}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{1df91e6a-8a98-4197-aad0-e8a57cad9e08}" />
@@ -124,16 +121,6 @@
 			<destination>{dd30e9d1-19f1-4901-a604-77981bb2a833}</destination>
 		</relationship>
 	</object>
-	<object class="ParameterProxy" id="{2ad852ea-3d0d-4229-8b15-7531d3a64518}">
-		<relationship name="preset">
-			<destination>{b45185e6-86de-4f88-8180-5b88cf831c0a}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProxy" id="{1a209eae-8da6-4d43-a44a-83bf663d8e3a}">
-		<relationship name="preset">
-			<destination>{6d84a2e6-35e4-4c1e-b014-5c0c590794e2}</destination>
-		</relationship>
-	</object>
 	<object class="EventMixerMaster" id="{44583db1-f7fc-462c-bf96-266764624856}">
 		<relationship name="automators">
 			<destination>{ea06fd1b-2643-4e3f-a7d1-daa77804d4fb}</destination>
@@ -156,11 +143,6 @@
 	<object class="AutomationTrack" id="{2fe22077-2f59-465e-b95a-b0d934baf8ce}">
 		<relationship name="automator">
 			<destination>{9b4f04ac-20bf-40f1-bd77-469527804538}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationTrack" id="{88061d19-4799-4d6f-a83c-4af0e0db877e}">
-		<relationship name="automator">
-			<destination>{ea06fd1b-2643-4e3f-a7d1-daa77804d4fb}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{d717bd50-19b6-4f85-b1d8-66cf55bc9c8b}">

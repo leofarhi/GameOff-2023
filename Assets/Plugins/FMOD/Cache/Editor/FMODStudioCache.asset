@@ -27,7 +27,6 @@ MonoBehaviour:
   - {fileID: 6593827948694313445}
   - {fileID: 1746833596300243432}
   - {fileID: -2304945168636978557}
-  - {fileID: -7621386208194895079}
   MinDistance: 1
   MaxDistance: 20
   Length: 65454
@@ -55,7 +54,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-7621386208194895079
+--- !u!114 &-6240633919360970620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,21 +63,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music_Event/fm_volume_master
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUSIC/Music_Menu
   m_EditorClassIdentifier: 
-  Name: fm_volume_master
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 3002237428
-    data2: 7528370
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
+  Path: event:/MUSIC/Music_Menu
+  Guid:
+    Data1: -896364219
+    Data2: 1264024919
+    Data3: -412701556
+    Data4: 1710492947
+  Banks:
+  - {fileID: 1628400859941199258}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 73846
 --- !u!114 &-2781517172552783243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +146,8 @@ MonoBehaviour:
   - {fileID: 1628400859941199258}
   EditorEvents:
   - {fileID: -9205301366771604225}
+  - {fileID: -6240633919360970620}
+  - {fileID: 3454085674935856672}
   EditorParameters:
   - {fileID: -8185332496929204828}
   - {fileID: 8388730185371989166}
@@ -154,7 +158,7 @@ MonoBehaviour:
   - {fileID: 1628400859941199258}
   StringsBanks:
   - {fileID: 5654787617381821802}
-  cacheTime: 638368114100000000
+  cacheTime: 638368839739574208
   cacheVersion: 131609
 --- !u!114 &207353477422362203
 MonoBehaviour:
@@ -219,10 +223,10 @@ MonoBehaviour:
   Path: Assets/FmodProj/GameOff2023_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638368114100000000
+  lastModified: 638368839739559178
   FileSizes:
   - Name: Desktop
-    Value: 3199936
+    Value: 4110048
   Exists: 1
 --- !u!114 &1746833596300243432
 MonoBehaviour:
@@ -248,6 +252,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &3454085674935856672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/SFX_DoorBroken
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SFX_DoorBroken
+  Guid:
+    Data1: 1208236383
+    Data2: 1240652580
+    Data3: -564254278
+    Data4: 2063313594
+  Banks:
+  - {fileID: 1628400859941199258}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9211
 --- !u!114 &5654787617381821802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,10 +294,10 @@ MonoBehaviour:
   Path: Assets/FmodProj/GameOff2023_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638368114100000000
+  lastModified: 638368839739574208
   FileSizes:
   - Name: Desktop
-    Value: 1020
+    Value: 1164
   Exists: 1
 --- !u!114 &6593827948694313445
 MonoBehaviour:
