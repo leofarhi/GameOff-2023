@@ -191,7 +191,14 @@ public class ReferenceTextDrawer : PropertyDrawer
         for (int i = 0; i < text.text.Count; i++)
         {
             GUIContent elementLabel = new GUIContent(languageSystemValue.languagesName[i]);
+            string element = text.text[i];
             text.text[i] = EditorGUI.TextField(listRect, elementLabel, text.text[i]);
+            //Check if the text changed
+            if (element != text.text[i])
+            {
+                //Set dirty
+                EditorUtility.SetDirty(languageSystemValue);
+            }
             listRect.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
         }
         EditorGUI.EndProperty();

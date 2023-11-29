@@ -18,6 +18,8 @@ public class Enemy : TemperatureBehaviour
     [Header("Enemy")]
     public EnemyState enemyState;
     public NavMeshAgent agent;
+    public Animator animator;
+    public float viewAngle = 45;
 
     [Header("Patrol")]
     public float patrolRange = 10;
@@ -37,6 +39,31 @@ public class Enemy : TemperatureBehaviour
     public float attackDamage = 10;
     public float attackRate = 1;//attack per second
     public float attackCooldown = 0;
+    protected IEnumerator _attackCoroutine;
+    
+    
+    public bool isDead()
+    {
+        return enemyState == EnemyState.Dead;
+    }
+    
+    public bool ViewTarget()
+    {
+        if (attackTarget != null)
+        {
+            if (Vector3.Distance(transform.position, attackTarget.transform.position) < chaseRange)
+            {
+                //check if player is in view angle
+                var direction = attackTarget.transform.position - transform.position;
+                var angle = Vector3.Angle(direction, transform.forward);
+                if (angle < viewAngle)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     
     public void GoTo(Vector3 position, float speed)
     {
@@ -75,7 +102,8 @@ public class Enemy : TemperatureBehaviour
         {
             //Stop AI
             agent.speed = 0;
-            _patrolTimer -= Time.deltaTime;
+            if (agent.velocity.magnitude <= 0.05f)
+                _patrolTimer -= Time.deltaTime;
             if (_patrolTimer <= 0)
             {
                 enemyState = EnemyState.Patrol;
@@ -83,9 +111,84 @@ public class Enemy : TemperatureBehaviour
             }
         }
     }
+    
+    public virtual void Chase()
+    {
+        if (Vector3.Distance(transform.position, attackTarget.transform.position) < attackRange)
+        {
+            enemyState = EnemyState.Attack;
+        }
+        else
+        {
+            GoTo(attackTarget.transform.position, chaseSpeed);
+        }
+        if (Vector3.Distance(transform.position, attackTarget.transform.position) > chaseRange)
+        {
+            enemyState = EnemyState.Patrol;
+        }
+    }
+    
+    public virtual void Attack()
+    {
+        if (Vector3.Distance(transform.position, attackTarget.transform.position) > attackRange)
+        {
+            enemyState = EnemyState.Chase;
+        }
+        else
+        {
+            if (attackCooldown <= 0)
+            {
+                attackCooldown = 1 / attackRate;
+                _attackCoroutine = AttackAnimation();
+                StartCoroutine(_attackCoroutine);
+                //attackTarget.GetComponent<TemperatureBehaviour>().currentTemperature -= attackDamage;
+            }
+            else
+            {
+                attackCooldown -= Time.deltaTime;
+            }
+        }
+    }
+    
+    public virtual IEnumerator AttackAnimation()
+    {
+        yield return null;
+        _attackCoroutine = null;
+    }
 
     public virtual void UpdateSate()
     {
+        if (enemyState == EnemyState.Dead)
+        {
+            return;
+        }
+        if (_attackCoroutine != null)
+        {
+            return;
+        }
         Patrol();
+        if (attackTarget == null)
+        {
+            enemyState = EnemyState.Patrol;
+        }
+        else
+        {
+            if (enemyState == EnemyState.Patrol || enemyState == EnemyState.IdlePatrol)
+            {
+                if (ViewTarget())
+                {
+                    enemyState = EnemyState.Chase;
+                }
+            }
+            if (enemyState == EnemyState.Chase)
+            {
+                Chase();
+            }
+
+            if (enemyState == EnemyState.Attack)
+            {
+                Attack();
+            }
+        }
     }
 }

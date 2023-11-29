@@ -66,6 +66,8 @@ public class LanguageUpdateTextEditor : Editor
                 text.text[i] = languageUpdateText.text.text;
             }
             languageSystemValue.SetTextValue(languageUpdateText.textValue.uuid, text);
+            //Dirty the asset
+            EditorUtility.SetDirty(languageSystemValue);
         }
     }
     

@@ -22,6 +22,8 @@ public class AnimationObject : MonoBehaviour
             SetAnimatorInt,
             
             StartDialogue,
+            
+            FmodSetParameter,
         }
         public ActionType actionType;
         public UnityEvent unityEvent;
@@ -64,6 +66,9 @@ public class AnimationObject : MonoBehaviour
                     break;
                 case ActionType.StartDialogue:
                     PersistenceDataScene.Instance.LaunchDialogue(dialogueValue,unityEvent);
+                    break;
+                case ActionType.FmodSetParameter:
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName(animatorAttribute, animatorFloatValue);
                     break;
             }
         }
@@ -209,6 +214,12 @@ public class AnimationObjectEditor : UnityEditor.Editor
                         SerializedProperty property2 = serializedObject2.FindProperty("animations").GetArrayElementAtIndex(i).FindPropertyRelative("actions").GetArrayElementAtIndex(j).FindPropertyRelative("unityEvent");
                         EditorGUILayout.PropertyField(property2, new GUIContent("On Dialogue End"));
                         serializedObject2.ApplyModifiedProperties();
+                        break;
+                    case AnimationObject.Action.ActionType.FmodSetParameter:
+                        action.animatorAttribute =
+                            EditorGUILayout.TextField("Fmod Parameter", action.animatorAttribute);
+                        action.animatorFloatValue =
+                            EditorGUILayout.FloatField("Fmod Parameter Value", action.animatorFloatValue);
                         break;
                 }
 

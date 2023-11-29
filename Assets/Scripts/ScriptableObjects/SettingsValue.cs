@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Runtime.Serialization.Json;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -162,3 +163,20 @@ public class SettingsValue : ScriptableObject
             OptionsMenu.Instance.UpdateLanguage();
     }
 }
+#if UNITY_EDITOR
+[CustomEditor(typeof(SettingsValue))]
+public class SettingsValueEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+        //Add Update button
+        SettingsValue settingsValueValue = (SettingsValue)target;
+        if (GUILayout.Button("Update"))
+        {
+            //Update all settings
+            settingsValueValue.Apply();
+        }
+    }
+}
+#endif
