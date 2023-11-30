@@ -24,6 +24,7 @@ public class AnimationObject : MonoBehaviour
             StartDialogue,
             
             FmodSetParameter,
+            FmodPlayEvent,
         }
         public ActionType actionType;
         public UnityEvent unityEvent;
@@ -69,6 +70,9 @@ public class AnimationObject : MonoBehaviour
                     break;
                 case ActionType.FmodSetParameter:
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName(animatorAttribute, animatorFloatValue);
+                    break;
+                case ActionType.FmodPlayEvent:
+                    FMODUnity.RuntimeManager.PlayOneShot(animatorAttribute);
                     break;
             }
         }
@@ -220,6 +224,10 @@ public class AnimationObjectEditor : UnityEditor.Editor
                             EditorGUILayout.TextField("Fmod Parameter", action.animatorAttribute);
                         action.animatorFloatValue =
                             EditorGUILayout.FloatField("Fmod Parameter Value", action.animatorFloatValue);
+                        break;
+                    case AnimationObject.Action.ActionType.FmodPlayEvent:
+                        action.animatorAttribute =
+                            EditorGUILayout.TextField("Fmod PlayOneShot", action.animatorAttribute);
                         break;
                 }
 

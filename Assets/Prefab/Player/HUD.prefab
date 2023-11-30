@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 6776204502348973594}
   - component: {fileID: 8541902887346884899}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1093,7 +1093,7 @@ MonoBehaviour:
   cold: {fileID: 3658608730232538107}
   hot: {fileID: 1774066230032630677}
   interactionIcon: {fileID: 4940931604424551596}
-  interactionIconActive: 0
+  interactionText: {fileID: 6337891140669062065}
 --- !u!1 &6866489685643208847
 GameObject:
   m_ObjectHideFlags: 0

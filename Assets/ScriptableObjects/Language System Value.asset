@@ -221,3 +221,7 @@ MonoBehaviour:
     text:
     - Supprimer
     - Supprimer
+  - uuid: c3d05b32-4eac-4dac-ba77-2745b89111ff
+    text:
+    - Attaquer
+    - Attaquer

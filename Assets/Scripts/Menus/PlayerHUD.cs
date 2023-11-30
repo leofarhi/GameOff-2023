@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -24,6 +25,7 @@ public class PlayerHUD : MonoBehaviour
     public Volume hot;
     [Header("System")]
     public GameObject interactionIcon;
+    public TMP_Text interactionText;
 
     
     public bool interactionIconActive
@@ -52,6 +54,7 @@ public class PlayerHUD : MonoBehaviour
         
         if (interactionIcon.activeSelf != interactionIconActive)
             interactionIcon.SetActive(interactionIconActive);
+        interactionText.text = InputPreset.current.actionInput.buttonName;
     }
     
     public void OnGameStateChanged(GameState newGameState)

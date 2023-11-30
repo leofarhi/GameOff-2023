@@ -23,6 +23,7 @@ public class PersistenceDataScene : MonoBehaviour
     public GameObject loadingScreenPanel;
     public GameObject savePanel;
     public GameObject teleportBox;
+    public GameObject pauseMenuPanel;
     [Space]
     public DialogueInterface dialogueInterface;
     
@@ -133,6 +134,7 @@ public class PersistenceDataScene : MonoBehaviour
         dataSaveValue.Reset();
         LoadScene("MainMenu");
         OpenOrCloseSavePanel(false);
+        OpenOrClosePauseMenu(false);
     }
     
     public void OpenOrCloseSavePanel(bool open)
@@ -146,6 +148,36 @@ public class PersistenceDataScene : MonoBehaviour
         else
         {
             InterfaceIsOpen = GameState.Gameplay;
+        }
+    }
+    
+    public void OpenOrClosePauseMenu(bool open)
+    {
+        pauseMenuPanel.SetActive(open);
+        if (open)
+        {
+            InterfaceIsOpen = GameState.Paused;
+            teleportBox.SetActive(playerCanTeleport.RuntimeValue);
+        }
+        else
+        {
+            InterfaceIsOpen = GameState.Gameplay;
+        }
+    }
+
+    public void Update()
+    {
+        if (InputPreset.current.pauseInput.GetButtonDown())
+        {
+            if (InterfaceIsOpen == GameState.Paused)
+            {
+                OpenOrClosePauseMenu(false);
+                OpenOrCloseSavePanel(false);
+            }
+            else if (InterfaceIsOpen == GameState.Gameplay)
+            {
+                OpenOrClosePauseMenu(true);
+            }
         }
     }
 }

@@ -56,13 +56,32 @@ public class CapsuleSave : MonoBehaviour
         {
             yield return null;
         }
-        ThirdPersonController.instance.GetComponent<GroundCollider>().ForceTeleport(spawnPoint.position);
-        ThirdPersonController.instance.transform.rotation = spawnPoint.rotation;
+        ThirdPersonController player = ThirdPersonController.instance;
+        GroundCollider groundCollider = player.GetComponent<GroundCollider>();
         dataSaveValue.RuntimeValue.playerPosition = Vector3.zero;
         ThirdPersonController.instance.LockInput();
-        yield return new WaitForSeconds(1f);
+        
+        groundCollider.ForceTeleport(spawnPoint.position);
+        player.transform.rotation = spawnPoint.rotation;
+        
+        float time = 0f;
+        /*yield return new WaitForSeconds(1f);
         animator.enabled = true;
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1.8f);*/
+        while (time < 2.8f)
+        {
+            if (Vector3.Distance(player.transform.position, spawnPoint.position) > 0.5f)
+            {
+                groundCollider.ForceTeleport(spawnPoint.position);
+                player.transform.rotation = spawnPoint.rotation;
+            }
+            time += Time.deltaTime;
+            yield return null;
+            if (time > 1f && !animator.enabled)
+            {
+                animator.enabled = true;
+            }
+        }
         ThirdPersonController.instance.UnlockInput();
     }
 
