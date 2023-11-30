@@ -33,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FacadeAlbedo:
-        m_Texture: {fileID: 2800000, guid: 2db3629ea48638b4685e5df1b75ef6fc, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FacadeSmoothness:
@@ -86,7 +86,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RoomIntensity: 1
+    - _RoomIntensity: 2
     - _RoomTile: 0.1
     - _SmoothnessValue: 1
     - _SpecularHighlights: 1
@@ -97,7 +97,7 @@ Material:
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _Offset: {r: 1, g: 0, b: 0, a: 0}
     - _PositionOffsetXYZroomsWprops: {r: 9.6, g: 2.3, b: 13.44, a: 0}
-    - _RoomColorTint: {r: 1, g: 1, b: 1, a: 0}
+    - _RoomColorTint: {r: 1, g: 1, b: 1, a: 1}
     - _RoomsXYZPropsW: {r: 0.25, g: 2.8, b: 0.25, a: 1}
     - _Tiling: {r: 0.25, g: 0.25, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -86,7 +86,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RoomIntensity: 1
+    - _RoomIntensity: 2
     - _RoomTile: 0.1
     - _SmoothnessValue: 1
     - _SpecularHighlights: 1
