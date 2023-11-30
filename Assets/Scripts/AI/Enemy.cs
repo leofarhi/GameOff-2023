@@ -56,7 +56,7 @@ public class Enemy : TemperatureBehaviour
                 //check if player is in view angle
                 var direction = attackTarget.transform.position - transform.position;
                 var angle = Vector3.Angle(direction, transform.forward);
-                if (angle < viewAngle)
+                if (Mathf.Abs(angle) < viewAngle)
                 {
                     return true;
                 }
@@ -114,7 +114,7 @@ public class Enemy : TemperatureBehaviour
     
     public virtual void Chase()
     {
-        if (Vector3.Distance(transform.position, attackTarget.transform.position) < attackRange)
+        if (Vector3.Distance(transform.position, attackTarget.transform.position) <= attackRange)
         {
             enemyState = EnemyState.Attack;
         }
@@ -122,7 +122,7 @@ public class Enemy : TemperatureBehaviour
         {
             GoTo(attackTarget.transform.position, chaseSpeed);
         }
-        if (Vector3.Distance(transform.position, attackTarget.transform.position) > chaseRange)
+        if (Vector3.Distance(transform.position, attackTarget.transform.position) >= chaseRange)
         {
             enemyState = EnemyState.Patrol;
         }
@@ -158,6 +158,10 @@ public class Enemy : TemperatureBehaviour
 
     public virtual void UpdateSate()
     {
+        if (GameStateManager.Instance.CurrentGameState != GameState.Gameplay)
+        {
+            return;
+        }
         if (enemyState == EnemyState.Dead)
         {
             return;
@@ -190,5 +194,36 @@ public class Enemy : TemperatureBehaviour
                 Attack();
             }
         }
+    }
+    
+    public virtual void Die()
+    {
+        enemyState = EnemyState.Dead;
+        agent.speed = 0;
+        agent.enabled = false;
+        GetComponent<Collider>().enabled = false;
+        animator.SetTrigger("Die");
+    }
+
+    public override void TakeDamageTemperature(float damage)
+    {
+        base.TakeDamageTemperature(damage);
+        enemyState = EnemyState.Chase;
+    }
+    
+    public void OnGameStateChanged(GameState newGameState)
+    {
+        agent.enabled = newGameState == GameState.Gameplay;
+        animator.enabled = newGameState == GameState.Gameplay;
+    }
+
+    private void OnEnable()
+    {
+        GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
+    }
+        
+    private void OnDisable()
+    {
+        GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
     }
 }

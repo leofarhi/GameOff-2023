@@ -49,7 +49,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 4647168156137270686}
   collider: {fileID: 1551674573272537646}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 385
   owner: {fileID: 0}
+  temperatureAmount: 10
+  lifeTime: 5
+  lights:
+  - {fileID: 8356832057702868753}
   OnSpawn:
     m_PersistentCalls:
       m_Calls: []
@@ -266,3 +273,9 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!108 &8356832057702868753 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 10842724, guid: 3b671081e44be1c4aa4355e8ba6e8a5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8356832057692558709}
+  m_PrefabAsset: {fileID: 0}

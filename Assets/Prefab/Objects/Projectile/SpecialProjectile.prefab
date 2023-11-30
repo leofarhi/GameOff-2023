@@ -50,7 +50,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 2436201528118396642}
   collider: {fileID: 6054505591426907862}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 385
   owner: {fileID: 0}
+  temperatureAmount: 10
+  lifeTime: 5
+  lights:
+  - {fileID: 5529071603019836790}
   OnSpawn:
     m_PersistentCalls:
       m_Calls:
@@ -326,6 +333,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc45d356f9cc39149a47bc7e96bf12c4, type: 3}
+--- !u!108 &5529071603019836790 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 108832920087657308, guid: dc45d356f9cc39149a47bc7e96bf12c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5564641142714340906}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5564641142714317888 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 109162, guid: dc45d356f9cc39149a47bc7e96bf12c4,
