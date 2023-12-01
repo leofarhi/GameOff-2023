@@ -1,6 +1,7 @@
 ﻿ using System;
  using System.Collections;
  using System.Collections.Generic;
+ using System.Linq;
  using UnityEngine;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -24,10 +25,42 @@
         [Header("General Settings")]
         public InputPreset inputPreset;
         public static ThirdPersonController instance;
-        public IntValue lifeValue;
-        public IntValue maxLife;
-        public IntValue staminaValue;
-        public IntValue maxStamina;
+        public FloatValue lifeValue;
+        public FloatValue maxLife;
+        public FloatValue staminaValue;
+        public FloatValue maxStamina;
+        
+        public bool isDead
+        {
+            get { return lifeValue.RuntimeValue <= 0; }
+        }
+
+        public float stamina
+        {
+            get { return staminaValue.RuntimeValue; }
+            set { staminaValue.RuntimeValue = value; }
+        }
+        public float health
+        {
+            get { return lifeValue.RuntimeValue; }
+            set { lifeValue.RuntimeValue = value; }
+        }
+
+        public float MaxStamina
+        {
+            get { return maxStamina.RuntimeValue; }
+            set { maxStamina.RuntimeValue = value; }
+        }
+        public float MaxHealth 
+        {
+            get { return maxLife.RuntimeValue; }
+            set { maxLife.RuntimeValue = value; }
+        }
+        
+        
+        public float staminaRegen = 1;
+        public float healthRegen = 0.001f;
+        private bool staminaRegenActive = true;
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
@@ -70,14 +103,24 @@
         public LayerMask GroundLayers;
         
         [Header("Attack")]
-        public int simpleAttackConsumption = 10;
-        public int specialAttackConsumption = 20;
-        public float temperatureAttack = 25f;
         public TemperatureState AttackTemperatureState = TemperatureState.Cold;
         public Projectile.ProjectilesPrefab simpleAttackProjectile;
         public Projectile.ProjectilesPrefab specialAttackProjectile;
         private Projectile currentProjectile;
         public Transform[] handPositions;
+
+        [Header("Consumption")]
+        public float JumpConsumption = 10;
+        public float SprintConsumption = 10;
+        public float AttackConsumption = 10;
+        public float AttackConsumptionSpecial = 20;
+
+        [Header("Renderer")]
+        public List<SkinnedMeshRenderer> playerRenderers;
+        public List<Material> handMaterials;
+        public Color coldColor;
+        public Color hotColor;
+        public GameObject deathParticles;
         private Transform _handPosition
         {
             get
@@ -194,10 +237,12 @@
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
             SetupOriginalBodyScale();
+            SetupRenderer();
         }
 
         public override void Update()
         {
+            staminaRegenActive = true;
             base.Update();
             _hasAnimator = _animator != null;
             
@@ -207,6 +252,67 @@
             GroundedCheck();
             Attack();
             Move();
+            UpdateRenderer();
+            
+            
+            UpdateHealthAndStamina();
+        }
+        
+        public void UpdateHealthAndStamina()
+        {
+            if (staminaRegenActive)
+            {
+                stamina += staminaRegen * Time.deltaTime;
+                if (stamina > MaxStamina)
+                    stamina = MaxStamina;
+            }
+            health += healthRegen * Time.deltaTime;
+            if (health > MaxHealth)
+                health = MaxHealth;
+        }
+        
+        public bool StaminaConsumption(float consumption)
+        {
+            if (consumption<= 0)
+                return true;
+            staminaRegenActive = false;
+            if (stamina >= consumption)
+            {
+                stamina -= consumption;
+                return true;
+            }
+            return false;
+        }
+        
+        public void SetupRenderer()
+        {
+            if (handMaterials==null)
+                handMaterials = new List<Material>();
+            List<Material> newHandMaterials = new List<Material>();
+            foreach (var material in handMaterials)
+            {
+                foreach (var renderer in playerRenderers)
+                {
+                    int index = renderer.materials.ToList().FindIndex(x => x.name.Contains(material.name));
+                    if (index != -1)
+                    {
+                        renderer.materials[index] = new Material(material);
+                        newHandMaterials.Add(renderer.materials[index]);
+                    }
+                }
+            }
+            handMaterials = newHandMaterials;
+        }
+        
+        public void UpdateRenderer()
+        {
+            foreach (var material in handMaterials)
+            {
+                if (AttackTemperatureState == TemperatureState.Cold)
+                    material.color = Color.Lerp(material.color, coldColor, Time.deltaTime * 5);
+                else
+                    material.color = Color.Lerp(material.color, hotColor, Time.deltaTime * 5);
+            }
         }
 
         public override void OnTemperatureStateChangeCallback(TemperatureState old,TemperatureState state)
@@ -303,7 +409,7 @@
         {
             Vector2 moveInput = inputPreset.moveInput;
             // set target speed based on move speed, sprint speed and if sprint is pressed
-            float targetSpeed = inputPreset.sprintInput.GetButton() ? SprintSpeed : MoveSpeed;
+            float targetSpeed = inputPreset.sprintInput.GetButton() && StaminaConsumption(SprintConsumption) ? SprintSpeed : MoveSpeed;
             
             if (lockInput)
             {
@@ -394,7 +500,7 @@
                 
                 if (!lockInput) 
                     // Jump
-                if (inputPreset.jumpInput.GetButtonDown() && _jumpTimeoutDelta <= 0.0f)
+                if (inputPreset.jumpInput.GetButtonDown() && StaminaConsumption(JumpConsumption) && _jumpTimeoutDelta <= 0.0f)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
@@ -452,6 +558,17 @@
         public void Attack()
         {
             if (lockInput) return;
+            if (InputPreset.current.changeTempertureInput.GetButtonDown())
+            {
+                if (AttackTemperatureState == TemperatureState.Hot)
+                {
+                    AttackTemperatureState = TemperatureState.Cold;
+                }
+                else
+                {
+                    AttackTemperatureState = TemperatureState.Hot;
+                }
+            }
             if (Grounded)
             {
                 if (InputPreset.current.attackInput.GetButtonDown())
@@ -496,6 +613,7 @@
         {
             if (currentProjectile != null)
             {
+                currentTemperature+= currentProjectile.temperatureAmount/5;
                 GameObject target = DetectTarget();
                 if (target == null)
                 {
@@ -509,13 +627,26 @@
             }
         }
         
-        public void SpawnProjectile(Projectile.ProjectilesPrefab projectilePrefab)
+        public void SpawnProjectile(Projectile.ProjectilesPrefab projectilePrefab,bool specialAttack)
         {
             if (currentProjectile == null)
             {
                 GameObject newProjectile = Instantiate(projectilePrefab.get(AttackTemperatureState), _handPosition.position, transform.rotation); 
                 newProjectile.transform.parent = _handPosition;
                 currentProjectile = newProjectile.GetComponent<Projectile>();
+                currentProjectile.SetOwner(gameObject);
+                if (AttackTemperatureState == TemperatureState.Hot)
+                {
+                    currentProjectile.temperatureAmount = 10f;
+                }
+                else
+                {
+                    currentProjectile.temperatureAmount = -10f;
+                }
+                if (specialAttack)
+                {
+                    currentProjectile.temperatureAmount *= 2;
+                }
             }
         }
         private IEnumerator AttackAnimation()
@@ -535,8 +666,24 @@
             {
                 animationName = "BigAttack";
             }
+            if (animationName == "BigAttack")
+            {
+                if (!StaminaConsumption(AttackConsumptionSpecial))
+                {
+                    UnlockInput();
+                    yield break;
+                }
+            }
+            else
+            {
+                if (!StaminaConsumption(AttackConsumption))
+                {
+                    UnlockInput();
+                    yield break;
+                }
+            }
             _animator.PlayInFixedTime(animationName, 0, 0f);
-            SpawnProjectile(animationName == "BigAttack" ? specialAttackProjectile : simpleAttackProjectile);
+            SpawnProjectile(animationName == "BigAttack" ? specialAttackProjectile : simpleAttackProjectile,animationName == "BigAttack");
             yield return null;
             //Wait until current animation is same as animationName
             float animationLength = _animator.GetCurrentAnimatorStateInfo(0).length;
@@ -568,12 +715,12 @@
                     }
                     if (animationTime >= animationLength / 2f)
                     {
-                        if (InputPreset.current.attackInput.GetButtonDown())
+                        if (InputPreset.current.attackInput.GetButtonDown() && StaminaConsumption(AttackConsumption))
                         {
                             handSelected = !handSelected;
                             _animator.PlayInFixedTime(animationName, 0, 0.2f);
                             FreeProjectile();
-                            SpawnProjectile(simpleAttackProjectile);
+                            SpawnProjectile(simpleAttackProjectile,false);
                             animationTime = 0f;
                             yield return null;
                         }
@@ -627,6 +774,27 @@
         private void OnDisable()
         {
             GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
+        }
+        
+        public void TakeDamage(float damage,GameObject attacker)
+        {
+            health -= damage;
+            //Add force
+            if (attacker != null)
+                _controller.Move(attacker.transform.forward * 0.05f);
+
+            if (health <= 0f)
+            {
+                OnDeath();
+            }
+        }
+        
+        public void OnDeath()
+        {
+            LockInput();
+            Instantiate(deathParticles, transform.position, Quaternion.identity).SetActive(true);
+            gameObject.SetActive(false);
+            PersistenceDataScene.Instance.GameOver();
         }
         
     }

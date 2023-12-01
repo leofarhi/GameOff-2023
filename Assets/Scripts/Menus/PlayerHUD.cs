@@ -26,6 +26,9 @@ public class PlayerHUD : MonoBehaviour
     [Header("System")]
     public GameObject interactionIcon;
     public TMP_Text interactionText;
+    [Header("Health and Stamina")]
+    public Image healthBar;
+    public Image staminaBar;
 
     
     public bool interactionIconActive
@@ -55,6 +58,9 @@ public class PlayerHUD : MonoBehaviour
         if (interactionIcon.activeSelf != interactionIconActive)
             interactionIcon.SetActive(interactionIconActive);
         interactionText.text = InputPreset.current.actionInput.buttonName;
+        
+        healthBar.fillAmount = player.health / player.MaxHealth;
+        staminaBar.fillAmount = player.stamina / player.MaxStamina;
     }
     
     public void OnGameStateChanged(GameState newGameState)

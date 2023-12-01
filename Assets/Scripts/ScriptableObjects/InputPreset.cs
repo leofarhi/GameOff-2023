@@ -21,6 +21,7 @@ public class InputPreset : ScriptableObject
     }
     
     public GenericInput sprintInput = new GenericInput("LeftShift", "LeftStickClick", "LeftStickClick");
+    public GenericInput changeTempertureInput = new GenericInput("LeftControl", "RightStickClick", "RightStickClick");
     public GenericInput jumpInput = new GenericInput("Space", "X", "X");
     public GenericInput actionInput = new GenericInput("E", "B", "B");
     public GenericInput cancelInput = new GenericInput("Q", "A", "A");

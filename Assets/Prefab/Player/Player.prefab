@@ -9787,6 +9787,14 @@ MonoBehaviour:
   - {fileID: 5575932246950542015}
   - {fileID: 8803992664184660638}
   - {fileID: 2153869450775020736}
+  playerRenderers:
+  - {fileID: 135732931810972156}
+  - {fileID: 5865829033614864259}
+  handMaterials:
+  - {fileID: 2100000, guid: b0241297767ba0b46a927f66e36b73c1, type: 2}
+  - {fileID: 2100000, guid: e9e4849023aea2543919f4266befafbc, type: 2}
+  coldColor: {r: 0.1254902, g: 0.5686275, b: 0.9843137, a: 1}
+  hotColor: {r: 1, g: 0.15686275, b: 0.21960784, a: 1}
   _animator: {fileID: 2619076585365891571}
   CameraMain: {fileID: 0}
 --- !u!114 &2581390790328099317
@@ -9974,6 +9982,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!137 &5865829033614864259 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8417361359673230750, guid: 157f896f1637b4444b58de9f4fab1646,
+    type: 3}
+  m_PrefabInstance: {fileID: 2717893660185553437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8803992664184660638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6888806815857526915, guid: 157f896f1637b4444b58de9f4fab1646,

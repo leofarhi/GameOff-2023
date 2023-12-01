@@ -104,24 +104,39 @@ public class TemperatureBehaviour : MonoBehaviour
         UpdateSate();
         //Remove temperature areas that are destroyed or disabled
         temperatureAreas.RemoveAll(area => area == null || !area.gameObject.activeSelf);
-        if (temperatureAreas.Count > 0)
+        if (GameStateManager.Instance.CurrentGameState == GameState.Gameplay)
         {
-            float temperature = 0;
-            foreach (var area in temperatureAreas)
+            if (temperatureAreas.Count > 0)
             {
-                temperature += area.temperature;
+                float temperature = 0;
+                foreach (var area in temperatureAreas)
+                {
+                    temperature += area.temperature;
+                }
+
+                temperature /= temperatureAreas.Count;
+                ChangeTemperatureProgressively(temperature);
             }
-            temperature /= temperatureAreas.Count;
-            ChangeTemperatureProgressively(temperature);
-        }
-        else
-        {
-            ChangeTemperatureProgressively(stableTemperature);
+            else
+            {
+                ChangeTemperatureProgressively(stableTemperature);
+            }
         }
     }
     
     public virtual void OnTemperatureStateChangeCallback(TemperatureState old,TemperatureState state)
     {
         
+    }
+    
+    public static float Range(float min, float max, float value)
+    {
+        //return precentage of value between min and max
+        return (value - min) / (max - min);
+    }
+    
+    public virtual void TakeDamageTemperature(float damage)
+    {
+        currentTemperature += damage;
     }
 }
