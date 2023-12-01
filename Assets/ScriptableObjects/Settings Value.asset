@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Settings Value
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 73c2b8ef81d1b854ca1805174e57f970, type: 2}
-  versionSettings: 1.01
+  versionSettings: 1
   language: English
   vibration: 0
   resolution: {x: 1920, y: 1080}
   quality: 2
   fullscreen: 0
   controllerDisplay: 0
-  generalVolume: 0.47
+  generalVolume: 1
   musicVolume: 1
   sfxVolume: 1
   controller: 1

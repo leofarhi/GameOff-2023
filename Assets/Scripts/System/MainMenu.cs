@@ -22,6 +22,11 @@ public class MainMenu : MonoBehaviour
         persistenceDataScene.HideLoadingScreen();
         persistenceDataScene.InterfaceIsOpen = GameState.Paused;
         loadGameBox.SetActive(false);
+        //Create Save Folder if not exist
+        if (!System.IO.Directory.Exists(DataSaveValue.folderPath))
+        {
+            System.IO.Directory.CreateDirectory(DataSaveValue.folderPath);
+        }
     }
 
     public void QuitGame()

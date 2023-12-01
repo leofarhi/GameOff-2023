@@ -96,17 +96,18 @@ public class SettingsValue : ScriptableObject
     
     public void SetDefault()
     {
-        if (LanguageSystemValue.Instance==null)
+        /*if (LanguageSystemValue.Instance==null)
             this.language = "Français";
         else
-            this.language = LanguageSystemValue.Instance.languagesName[0];
+            this.language = LanguageSystemValue.Instance.languagesName[0];*/
+        this.language = "English";
         SetResolution(new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height));
         SetQuality(QualitySettings.GetQualityLevel());
-        SetFullscreen(Screen.fullScreen);
+        SetFullscreen(true);
         SetGeneralVolume(1);
         SetMusicVolume(1);
         SetSfxVolume(1);
-        SetController(0);
+        SetController(1);
     }
     
     public void Apply()
