@@ -256,6 +256,7 @@
             
             
             UpdateHealthAndStamina();
+            health = Mathf.Clamp(health, 0, MaxHealth);
         }
         
         public void UpdateHealthAndStamina()

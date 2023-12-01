@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 73c2b8ef81d1b854ca1805174e57f970, type: 2}
   versionSettings: 1.01
-  language: "Fran\xE7ais"
+  language: English
   vibration: 0
   resolution: {x: 1920, y: 1080}
   quality: 2
   fullscreen: 0
   controllerDisplay: 0
-  generalVolume: 1
+  generalVolume: 0.47
   musicVolume: 1
   sfxVolume: 1
-  controller: 0
+  controller: 1

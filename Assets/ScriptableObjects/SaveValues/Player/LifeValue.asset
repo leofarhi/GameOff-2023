@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LifeValue
   m_EditorClassIdentifier: 
   initialValue: 100
-  RuntimeValue: 100
+  RuntimeValue: 83.33786

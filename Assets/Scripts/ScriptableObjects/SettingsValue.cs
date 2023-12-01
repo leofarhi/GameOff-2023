@@ -123,6 +123,7 @@ public class SettingsValue : ScriptableObject
     public void Save()
     {
         string path = Application.persistentDataPath + "/settings.json";
+        this.language = LanguageSystemValue.Instance.currentLanguage;
         mainInputPreset.Save();
         //Write to binary file
         Debug.Log(path);

@@ -15,12 +15,12 @@ MonoBehaviour:
   languagesName:
   - "Fran\xE7ais"
   - English
-  currentLanguage: "Fran\xE7ais"
+  currentLanguage: English
   texts:
   - uuid: 6b7169d6-21d9-4630-ba28-e3cd251162db
     text:
     - Jouer
-    - Jouer
+    - Play
   - uuid: 5c167986-e95f-42cf-8ab0-988e19589c98
     text:
     - Options
@@ -28,31 +28,31 @@ MonoBehaviour:
   - uuid: 28bedbab-76c4-4cad-94de-7805b5480414
     text:
     - Quitter
-    - Quitter
+    - Quit
   - uuid: 3ea555c3-aaed-4afb-86bd-c4ee7e6b8912
     text:
     - Appliquer
-    - Appliquer
+    - Apply
   - uuid: ba2c7bc4-bab9-45be-a790-a5dd41d35c74
     text:
     - Retour
-    - Retour
+    - Back
   - uuid: fbdaf199-6480-41b6-836d-d7aafbcfca2c
     text:
     - Reculer
-    - Reculer
+    - Backwards
   - uuid: 73e31ff6-b6f1-44f0-a833-4af535ccf1b8
     text:
     - Gauche
-    - Gauche
+    - Left
   - uuid: 741e7c9b-7e6a-474c-bbab-e54cfaeb77ae
     text:
     - Changer
-    - Changer
+    - Change
   - uuid: 3c42c86a-13df-4851-8fa2-2f06155ce893
     text:
     - "Param\xE8tres g\xE9n\xE9raux"
-    - "Param\xE8tres g\xE9n\xE9raux"
+    - General Settings
   - uuid: 06659d01-dc55-4812-8ea2-5b2302597bdb
     text:
     - INITIAL_TEXT
@@ -83,76 +83,76 @@ MonoBehaviour:
     - INITIAL_TEXT
   - uuid: d95ae1e0-fe63-449c-9682-340306307e64
     text:
-    - INITIAL_TEXT
-    - INITIAL_TEXT
+    - "Fran\xE7ais"
+    - "Fran\xE7ais"
   - uuid: 90135481-37c4-4cdf-910c-2eb59f549727
     text:
-    - INITIAL_TEXT
-    - INITIAL_TEXT
+    - English
+    - English
   - uuid: 59cb857a-e9b2-414b-a143-6e57ba94f97c
     text:
-    - INITIAL_TEXT
-    - INITIAL_TEXT
+    - Oui
+    - Yes
   - uuid: 02012513-b1ef-4bee-960b-5f40e5c4fc55
     text:
-    - INITIAL_TEXT
-    - INITIAL_TEXT
+    - Non
+    - No
   - uuid: 45140aac-ed46-4922-9ec5-8f25c0431107
     text:
     - "Param\xE8tres des Mouvements"
-    - "Param\xE8tres des Mouvements"
+    - Movement Settings
   - uuid: 675e8cf9-6f33-4fd0-88fe-8562f6946ccd
     text:
     - Annuler
-    - Annuler
+    - Cancel
   - uuid: 1d8fe3a7-b421-4f74-abbd-7684dd7a048c
     text:
     - Langue
-    - Langue
+    - Language
   - uuid: 249a21af-003e-4dd5-a98f-14d530d5b715
     text:
     - "R\xE9initialiser tous les param\xE8tres"
-    - "R\xE9initialiser tous les param\xE8tres"
+    - Reset All Settings
   - uuid: a3302d39-9fd9-4942-8339-16c916f15b64
     text:
     - "Contr\xF4les"
-    - "Contr\xF4les"
+    - Controls
   - uuid: cb9507c6-c9c8-47dd-99da-e6ac7f14eb8f
     text:
     - "R\xE9affecter les touches"
-    - "R\xE9affecter les touches"
+    - Reassign Keys
   - uuid: b36807b3-4897-457b-8072-c44caa355f5f
     text:
-    - Controlleur
-    - Controlleur
+    - Manette
+    - Controller
   - uuid: 79842d7c-7e44-4a85-8504-d67ecd352b14
     text:
     - Options Graphiques
-    - Options Graphiques
+    - Graphic Settings
   - uuid: f3a25d05-4c1e-4450-be0c-e7825968f8b5
     text:
     - "R\xE9solution"
-    - "R\xE9solution"
+    - Resolution
   - uuid: e43cdc7c-0cc8-4086-b557-53ed53714f7f
     text:
     - "Plein \xE9cran"
-    - "Plein \xE9cran"
+    - Full Screen
   - uuid: f9e3a358-db4d-41b4-8599-0dba09166826
     text:
     - Options Sonores
-    - Options Sonores
+    - Sound Settings
   - uuid: 2e24a3b8-7fc5-4433-aa47-b9f3339b57d4
     text:
-    - "Volume g\xE9n\xE9rale"
-    - "Volume g\xE9n\xE9rale"
+    - "Volume g\xE9n\xE9ral"
+    - General Volume
   - uuid: 91996fbd-0f77-4348-a030-bab952467c7f
     text:
-    - Volume des effets
-    - Volume des effets
+    - Volume des bruitages
+    - Sound Effects Volume
   - uuid: 8d63d65a-b592-4ff1-81aa-82070c5dcb50
     text:
     - Volume de la musique
-    - Volume de la musique
+    - Music Volume
   - uuid: 3f80732c-8a64-4ad7-8442-968882449813
     text:
     - Options
@@ -160,43 +160,43 @@ MonoBehaviour:
   - uuid: 617e6074-b4ef-4e85-ab05-2b11c7f82a00
     text:
     - Retour
-    - Retour
+    - Return
   - uuid: e66a81ea-ef4f-409c-b9a7-adc456ad4e70
     text:
     - "Param\xE8tres de la Camera"
-    - "Param\xE8tres de la Camera"
+    - Camera Settings
   - uuid: 0a08fb2e-78c1-433a-bddc-0c8f1b143da3
     text:
     - "D\xE9placements horizontaux"
-    - "D\xE9placements horizontaux"
+    - Horizontal Movements
   - uuid: 33495e9e-e4eb-4c85-9dcc-a3835f92814c
     text:
     - "D\xE9placements verticaux"
-    - "D\xE9placements verticaux"
+    - Vertical Movements
   - uuid: 5ce98d52-c844-4ac0-b852-1d1174d93646
     text:
     - Avancer
-    - Avancer
+    - Forwards
   - uuid: ecf30044-afa4-4fcc-aaaf-e4b95aab1736
     text:
     - Droite
-    - Droite
+    - Right
   - uuid: 225d3279-6859-48d9-99ff-c7ded391b90c
     text:
     - "Param\xE8tres d'actions"
-    - "Param\xE8tres d'actions"
+    - Action Settings
   - uuid: 86310469-7d7e-4764-be5a-1d03347cc682
     text:
     - Menu Pause
-    - Menu Pause
+    - Pause Menu
   - uuid: e265274d-55c1-4d38-8917-aba1eb57afa6
     text:
     - Courir
-    - Courir
+    - Run
   - uuid: e81f08d6-e889-4f20-a880-93051609b710
     text:
     - Sauter
-    - Sauter
+    - Jump
   - uuid: 3074a49e-4acf-48b3-9a5b-c9b44bf79546
     text:
     - Action
@@ -204,40 +204,151 @@ MonoBehaviour:
   - uuid: 652a50d5-bbd0-4e5c-8ebd-2c7572d0ec68
     text:
     - Sauvegardes
-    - Sauvegardes
+    - Saves
   - uuid: d505ad7b-47c7-4a83-917f-a1667e4c97e2
     text:
     - Retour
-    - Retour
+    - Return
   - uuid: 57b6b05a-8d72-498b-b4a0-79d4c413d0cc
     text:
     - Nouvelle Partie
-    - Nouvelle Partie
+    - New Game
   - uuid: 0943a3c5-1730-49a5-8a61-8251ee53c16d
     text:
     - Charger
-    - Charger
+    - Load
   - uuid: 339303f6-1337-478a-aae0-d020058378e9
     text:
     - Supprimer
-    - Supprimer
+    - Delete
   - uuid: c3d05b32-4eac-4dac-ba77-2745b89111ff
     text:
     - Attaquer
-    - Attaquer
+    - Attack
   - uuid: 8f9bd210-46fb-45b9-acf4-c45d407b75b5
     text:
     - Continuer
-    - Continuer
+    - Continue
   - uuid: 0f50af65-ceaf-4833-b7fc-934d7fd791ae
     text:
     - Ecran Titre
-    - Ecran Titre
+    - Title Screen
   - uuid: 29f1fa45-c0dd-4ac0-8294-60562ef6bfbf
     text:
     - Changer de temperature
-    - Changer de temperature
+    - Change temperature
   - uuid: d520dd56-d409-41cd-b3cb-3287cf6889c5
     text:
     - "Cr\xE9dits"
-    - "Cr\xE9dits"
+    - Credits
+  - uuid: dbe5b986-0c74-4555-b671-e53ede440fd2
+    text:
+    - Avertissement
+    - Warning
+  - uuid: b16d6c16-79a8-4082-a574-5205b66bdefb
+    text:
+    - "Cher joueur,\r\n\nCette version est une d\xE9mo r\xE9alis\xE9e pour la Game
+      Jam \"Game Off 2023\".\nEn raison du temps limit\xE9, elle offre un aper\xE7u
+      restreint du jeu complet.\r\nNous esp\xE9rons malgr\xE9 tout que cette d\xE9mo
+      vous offrira un avant-go\xFBt de l'univers du jeu. Merci de votre compr\xE9hension.\nProfitez
+      de cette d\xE9mo et amusez-vous bien !\r\n\nCordialement,\r\nL'\xE9quipe de
+      d\xE9veloppement"
+    - "Dear player,\r\n\nThis version is a demo created for the Game  Jam \"Game
+      Off 2023\".\nDue to limited time, it offers a  restricted preview of the full
+      game.\r\nNonetheless, we hope  this demo will give you a taste of the game's
+      universe. Thank you for your understanding. \nEnjoy this demo and have fun!\r\n\nBest
+      regards,\r\nThe development team"
+  - uuid: d35856ed-7e24-4d03-956e-0c434bed0a82
+    text:
+    - Chargement...
+    - Loading...
+  - uuid: 762b4dd1-1c99-4d1f-bef9-c8cf4d725661
+    text:
+    - Sauvegarder
+    - Save
+  - uuid: ac63e2d7-4f29-4e31-9087-5a10387c7580
+    text:
+    - Sauvegarder
+    - Save
+  - uuid: 96349109-44a7-40cc-a682-ac2c199bf040
+    text:
+    - Sauvegarder & quitter
+    - Save & Quit
+  - uuid: 25734b88-dc32-4d1b-8ef8-a891544f54be
+    text:
+    - Annuler
+    - Cancel
+  - uuid: 8091b150-2ddb-4411-aeed-dd0540f65f11
+    text:
+    - Pause
+    - Pause
+  - uuid: 9edd7c32-3b5e-40f0-a49c-2b51e5f43de7
+    text:
+    - Reprendre
+    - Resume
+  - uuid: 04cd1dbc-d9eb-4e95-84be-d295e7253c3e
+    text:
+    - Options
+    - Options
+  - uuid: ad1786ae-fc6c-4671-b311-4a9a92153bb2
+    text:
+    - Quitter
+    - Quit
+  - uuid: 5ac5b7ea-8d0c-4c52-a209-2ab3d263af1e
+    text:
+    - Quitter
+    - Quit
+  - uuid: 29087fbe-70e0-4c42-8944-21f51e5ad60f
+    text:
+    - "En quittant le jeu de cette mani\xE8re tout progression non sauvegard\xE9
+      sera perdu.\nVoulez-vous vraiment quitter ?\n"
+    - 'By quitting the game this way, any unsaved progress will be lost.
+
+      Do
+      you really want to quit?
+
+'
+  - uuid: eda1d472-3f77-4eac-92d2-ef29f40a9ccf
+    text:
+    - Reprendre
+    - Resume
+  - uuid: 57dbc8de-4799-4245-b508-197ae2f9474f
+    text:
+    - Quitter
+    - Quit
+  - uuid: d0ffef48-6b44-4ace-9689-8b797c9c35b2
+    text:
+    - Continuer
+    - Continue
+  - uuid: 03d95c2d-835d-4c8c-99e7-e72317b602fe
+    text:
+    - Ecran Titre
+    - Title Screen
+  - uuid: 4ec999d5-164f-4bd5-ab2f-8bfbf0d2d6a1
+    text:
+    - "D\xE9tection de la touche"
+    - Key Detection
+  - uuid: 27a5f779-2116-4be8-95e5-01d6e1e31c3d
+    text:
+    - "Veillez presser une touche pour la r\xE9affecter"
+    - Please press a key to reassign
+  - uuid: ef78ee82-05d6-4309-844b-2f6b39a3e791
+    text:
+    - Annuler
+    - Cancel
+  - uuid: eb2c527e-6e54-426e-93c8-6a9e1fe949a1
+    text:
+    - "R\xE9initialiser"
+    - Reset
+  - uuid: 4adc43ca-9ad6-408d-bc23-f151b130abe0
+    text:
+    - "\xEAtes-vous s\xFBr de vouloir r\xE9initialiser tous les param\xE8tres ?"
+    - Are you sure you want to reset all settings?
+  - uuid: cef68047-39c2-4db1-ab04-c87f46f6743e
+    text:
+    - Oui
+    - Yes
+  - uuid: a8244f91-e588-40d2-92f1-faeac2fbe283
+    text:
+    - Non
+    - No
