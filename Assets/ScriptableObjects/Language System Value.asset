@@ -225,3 +225,19 @@ MonoBehaviour:
     text:
     - Attaquer
     - Attaquer
+  - uuid: 8f9bd210-46fb-45b9-acf4-c45d407b75b5
+    text:
+    - Continuer
+    - Continuer
+  - uuid: 0f50af65-ceaf-4833-b7fc-934d7fd791ae
+    text:
+    - Ecran Titre
+    - Ecran Titre
+  - uuid: 29f1fa45-c0dd-4ac0-8294-60562ef6bfbf
+    text:
+    - Changer de temperature
+    - Changer de temperature
+  - uuid: d520dd56-d409-41cd-b3cb-3287cf6889c5
+    text:
+    - "Cr\xE9dits"
+    - "Cr\xE9dits"

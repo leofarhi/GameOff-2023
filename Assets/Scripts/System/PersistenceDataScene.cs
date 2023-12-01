@@ -24,6 +24,8 @@ public class PersistenceDataScene : MonoBehaviour
     public GameObject savePanel;
     public GameObject teleportBox;
     public GameObject pauseMenuPanel;
+    public GameObject gameOverPanel;
+    public float gameOverDelay = 1f;
     [Space]
     public DialogueInterface dialogueInterface;
     
@@ -122,19 +124,25 @@ public class PersistenceDataScene : MonoBehaviour
         OpenOrCloseSavePanel(false);
     }
     
+    public void CloseAllPanels()
+    {
+        OpenOrCloseSavePanel(false);
+        OpenOrClosePauseMenu(false);
+        gameOverPanel.SetActive(false);
+    }
+    
     public void SaveAndQuit()
     {
         SaveGame();
         ReturnToMainMenu();
-        OpenOrCloseSavePanel(false);
+        CloseAllPanels();
     }
     
     public void ReturnToMainMenu()
     {
         dataSaveValue.Reset();
+        CloseAllPanels();
         LoadScene("MainMenu");
-        OpenOrCloseSavePanel(false);
-        OpenOrClosePauseMenu(false);
     }
     
     public void OpenOrCloseSavePanel(bool open)
@@ -171,13 +179,38 @@ public class PersistenceDataScene : MonoBehaviour
         {
             if (InterfaceIsOpen == GameState.Paused)
             {
-                OpenOrClosePauseMenu(false);
-                OpenOrCloseSavePanel(false);
+                CloseAllPanels();
             }
             else if (InterfaceIsOpen == GameState.Gameplay)
             {
                 OpenOrClosePauseMenu(true);
             }
         }
+    }
+    
+    public void GameOver()
+    {
+        StartCoroutine(GameOverEvent());
+    }
+    
+    public void ReloadGame()
+    {
+        CloseAllPanels();
+        dataSaveValue.Load(dataSaveValue.RuntimeValue.saveName);
+    }
+    
+    private IEnumerator GameOverEvent()
+    {
+        InterfaceIsOpen = GameState.Animation;
+        gameOverPanel.SetActive(true);
+        yield return new WaitForSeconds(gameOverDelay);
+        InterfaceIsOpen = GameState.Dialogue;
+        //Load empty scene
+        SceneManager.LoadScene("EmptyScene");
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(i));
+        }
+
     }
 }

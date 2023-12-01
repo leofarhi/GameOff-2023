@@ -370,7 +370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.0024414062, y: 0.0008544922}
+  m_AnchoredPosition: {x: -0.0024414062, y: 0.0007324219}
   m_SizeDelta: {x: 141.1495, y: 542.6956}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &2305555748212795273
@@ -1094,6 +1094,8 @@ MonoBehaviour:
   hot: {fileID: 1774066230032630677}
   interactionIcon: {fileID: 4940931604424551596}
   interactionText: {fileID: 6337891140669062065}
+  healthBar: {fileID: 6968399729109371941}
+  staminaBar: {fileID: 9201964888726087317}
 --- !u!1 &6866489685643208847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1290,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0.977
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

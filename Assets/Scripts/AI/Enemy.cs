@@ -121,6 +121,19 @@ public class Enemy : TemperatureBehaviour
         else
         {
             GoTo(attackTarget.transform.position, chaseSpeed);
+            if(isStopped())
+            {
+                if (Vector3.Distance(transform.position, attackTarget.transform.position) <
+                    attackRange + 0.25f)
+                {
+                    enemyState = EnemyState.Attack;
+                }
+                else
+                {
+                    agent.speed = 0;
+                }
+            }
+            
         }
         if (Vector3.Distance(transform.position, attackTarget.transform.position) >= chaseRange)
         {
@@ -130,23 +143,21 @@ public class Enemy : TemperatureBehaviour
     
     public virtual void Attack()
     {
-        if (Vector3.Distance(transform.position, attackTarget.transform.position) > attackRange)
+        if (attackCooldown <= 0)
         {
-            enemyState = EnemyState.Chase;
+            attackCooldown = 1 / attackRate;
+            _attackCoroutine = AttackAnimation();
+            StartCoroutine(_attackCoroutine);
+            //attackTarget.GetComponent<TemperatureBehaviour>().currentTemperature -= attackDamage;
         }
         else
         {
-            if (attackCooldown <= 0)
-            {
-                attackCooldown = 1 / attackRate;
-                _attackCoroutine = AttackAnimation();
-                StartCoroutine(_attackCoroutine);
-                //attackTarget.GetComponent<TemperatureBehaviour>().currentTemperature -= attackDamage;
-            }
-            else
-            {
-                attackCooldown -= Time.deltaTime;
-            }
+            attackCooldown -= Time.deltaTime;
+        }
+        if (Vector3.Distance(transform.position, attackTarget.transform.position) > attackRange && 
+            !(isStopped() && Vector3.Distance(transform.position, attackTarget.transform.position) < attackRange+0.25f))
+        {
+            enemyState = EnemyState.Chase;
         }
     }
     
@@ -156,7 +167,7 @@ public class Enemy : TemperatureBehaviour
         _attackCoroutine = null;
     }
 
-    public virtual void UpdateSate()
+    public virtual void UpdateState()
     {
         if (GameStateManager.Instance.CurrentGameState != GameState.Gameplay)
         {
@@ -188,8 +199,7 @@ public class Enemy : TemperatureBehaviour
             {
                 Chase();
             }
-
-            if (enemyState == EnemyState.Attack)
+            else if (enemyState == EnemyState.Attack)
             {
                 Attack();
             }
