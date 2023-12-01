@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{abbf7a1f-4a3a-45c7-8eb8-1ea4fdecf0a8}">
+		<property name="assetPath">
+			<value>SFX_Gears_03.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.4241666666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b88cfec7-8140-49fa-978f-8ae8791f8ddd}</destination>
+		</relationship>
+	</object>
+</objects>
